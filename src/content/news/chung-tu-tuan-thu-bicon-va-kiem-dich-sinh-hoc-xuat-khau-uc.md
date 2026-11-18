@@ -1,11 +1,9 @@
 ---
 title: Chứng từ BICON và kiểm dịch sinh học xuất khẩu trái cây sang Úc
-description: Xuất khẩu trái cây sang Úc theo chuẩn BICON cần Giấy kiểm dịch thực vật
-  kèm Additional Declarations (VHT/Chiếu xạ) hoặc Tuyên bố nhà sản xuất, khớp mã PUC/PHC.
-publishDate: '2026-11-13'
-headlinePhoto: /media/MDA-Hub-AI-Driven.webp
-headlinePhotoAlt: 'Hình ảnh minh họa cho bài viết: Chứng từ BICON và kiểm dịch sinh
-  học xuất khẩu trái cây sang Úc'
+description: Xuất khẩu trái cây sang Úc theo chuẩn BICON cần Giấy kiểm dịch thực vật kèm Additional Declarations (VHT/Chiếu xạ) hoặc Tuyên bố nhà sản xuất, khớp mã PUC/PHC.
+publishDate: 2026-11-13
+headlinePhoto: /media/asian-female-farmer-see-growth-pineapple-farm-agricultural-industry-agriculture-business-concept.webp
+headlinePhotoAlt: "Hình ảnh minh họa cho bài viết: Chứng từ BICON và kiểm dịch sinh học xuất khẩu trái cây sang Úc"
 headlinePhotoCaption: Chuyên mục Chứng Từ & Pháp Lý XNK — MDA Agro-Export Hub
 author: Ban Pháp Lý & Tuân Thủ Hải Quan MDA
 featured: true

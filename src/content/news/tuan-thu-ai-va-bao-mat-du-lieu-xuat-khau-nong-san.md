@@ -1,11 +1,9 @@
 ---
 title: Tuân thủ AI và bảo mật dữ liệu xuất khẩu nông sản cho SME
-description: Shadow AI khiến doanh nghiệp xuất khẩu nông sản đối mặt án phạt tới 5%
-  doanh thu theo Nghị định 13, mất bản quyền tại EU và lộ giá vốn nếu thiếu Data Masking.
-publishDate: '2026-11-13'
-headlinePhoto: /media/MDA-Hub-AI-Driven.webp
-headlinePhotoAlt: 'Hình ảnh minh họa cho bài viết: Tuân thủ AI và bảo mật dữ liệu
-  xuất khẩu nông sản cho SME'
+description: Shadow AI khiến doanh nghiệp xuất khẩu nông sản đối mặt án phạt tới 5% doanh thu theo Nghị định 13, mất bản quyền tại EU và lộ giá vốn nếu thiếu Data Masking.
+publishDate: 2026-11-13
+headlinePhoto: /media/nhung-linkedin-11.webp
+headlinePhotoAlt: "Hình ảnh minh họa cho bài viết: Tuân thủ AI và bảo mật dữ liệu xuất khẩu nông sản cho SME"
 headlinePhotoCaption: Chuyên mục Chứng Từ & Pháp Lý XNK — MDA Agro-Export Hub
 author: Ban Pháp Lý & Tuân Thủ Hải Quan MDA
 featured: true

@@ -1,39 +1,31 @@
 ---
 title: Cách doanh nghiệp SME xuất nhập khẩu ứng dụng AI thành công
-description: SME xuất nhập khẩu ứng dụng AI thành công cần làm sạch dữ liệu 3 cấp
-  độ, neo AI vào tài liệu pháp lý chuẩn (I.P.O, P.C.V, A.I.M) và giữ Human-in-the-Loop.
-publishDate: '2026-11-13'
+description: SME xuất nhập khẩu ứng dụng AI thành công cần làm sạch dữ liệu 3 cấp độ, neo AI vào tài liệu pháp lý chuẩn (I.P.O, P.C.V, A.I.M) và giữ Human-in-the-Loop.
+publishDate: 2026-11-13
 category: Ứng Dụng AI Trong XNK
-headlinePhoto: /media/MDA-Hub-AI-Driven.webp
-headlinePhotoAlt: 'Hình ảnh minh họa cho bài viết: Cách doanh nghiệp SME xuất nhập
-  khẩu ứng dụng AI thành công'
+headlinePhoto: /media/nhung-linkedin-12.webp
+headlinePhotoAlt: "Hình ảnh minh họa cho bài viết: Cách doanh nghiệp SME xuất nhập khẩu ứng dụng AI thành công"
 headlinePhotoCaption: Chuyên mục Ứng Dụng AI Trong XNK — MDA Agro-Export Hub
 author: Tuệ Phạm (Mr. Tuệ)
 readingTime: 6 phút đọc
 tags:
-- ung-dung-ai-xnk
-- sme-xuat-nhap-khau
-- chuan-hoa-quy-trinh
-- data-masking
-- human-in-the-loop
+  - ung-dung-ai-xnk
+  - sme-xuat-nhap-khau
+  - chuan-hoa-quy-trinh
+  - data-masking
+  - human-in-the-loop
 faqSchema:
-- question: Làm thế nào để doanh nghiệp SME xuất nhập khẩu ứng dụng AI thành công
-    và an toàn?
-  answer: 'Doanh nghiệp cần thực hiện 3 bước: phân loại dữ liệu thành 3 cấp độ để
-    chặn rò rỉ bí mật thương mại, neo AI vào tài liệu pháp lý thật (biểu thuế HS Code,
-    quy định kiểm dịch, EUR.1), và luôn giữ chuyên gia kiểm duyệt cuối (Human-in-the-Loop).'
-- question: Bộ ba I.P.O, P.C.V và A.I.M có tác dụng gì trước khi triển khai AI?
-  answer: I.P.O giúp chuẩn hóa đầu vào, xử lý và đầu ra của quy trình; P.C.V giúp
-    chọn đúng điểm nghẽn có giá trị ROI cao nhất; còn A.I.M giúp viết prompt bám sát
-    nguồn tài liệu chuẩn để hạn chế ảo giác.
+  - question: Làm thế nào để doanh nghiệp SME xuất nhập khẩu ứng dụng AI thành công và an toàn?
+    answer: "Doanh nghiệp cần thực hiện 3 bước: phân loại dữ liệu thành 3 cấp độ để chặn rò rỉ bí mật thương mại, neo AI vào tài liệu pháp lý thật (biểu thuế HS Code, quy định kiểm dịch, EUR.1), và luôn giữ chuyên gia kiểm duyệt cuối (Human-in-the-Loop)."
+  - question: Bộ ba I.P.O, P.C.V và A.I.M có tác dụng gì trước khi triển khai AI?
+    answer: I.P.O giúp chuẩn hóa đầu vào, xử lý và đầu ra của quy trình; P.C.V giúp chọn đúng điểm nghẽn có giá trị ROI cao nhất; còn A.I.M giúp viết prompt bám sát nguồn tài liệu chuẩn để hạn chế ảo giác.
 sources:
-- title: 'Understanding AI Trust Layers: Core Principles and Implementation | Adlib
-    News'
-  url: https://www.adlibsoftware.com/news/ai-trust-layer
-- title: 'Data masking explained: techniques, use cases, and limits'
-  url: https://netwrix.com/en/resources/blog/data-masking
-- title: 'Data Redaction Guide: Protect Sensitive Information | AI-Redact | AI-Redact'
-  url: https://ai-redact.com/blog/data-redaction-guide
+  - title: "Understanding AI Trust Layers: Core Principles and Implementation | Adlib News"
+    url: https://www.adlibsoftware.com/news/ai-trust-layer
+  - title: "Data masking explained: techniques, use cases, and limits"
+    url: https://netwrix.com/en/resources/blog/data-masking
+  - title: "Data Redaction Guide: Protect Sensitive Information | AI-Redact | AI-Redact"
+    url: https://ai-redact.com/blog/data-redaction-guide
 ---
 
 > **Bạn có biết**
