@@ -21,14 +21,19 @@ jobs:
         run: npm install
       - name: Build Astro Project
         run: npm run build
-      - name: Deploy to Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: ./public_html/
-          dangerous-clean-slate: false
-          max-connections: 1
-          timeout: 120000
+      - name: Deploy to Hostinger via lftp
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          sudo apt-get update && sudo apt-get install -y lftp
+          lftp "$FTP_SERVER" <<EOF
+          set ftp:ssl-allow no
+          set net:max-retries 10
+          set net:reconnect-interval-base 5
+          set net:timeout 60
+          user "$FTP_USERNAME" "$FTP_PASSWORD"
+          mirror -R --delete --parallel=1 --exclude-glob .htaccess --exclude-glob .well-known/** --verbose ./dist/ ./public_html/
+          quit
+          EOF
