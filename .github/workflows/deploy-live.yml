@@ -1,29 +1,27 @@
 name: Deploy Production to Hostinger
-
 on:
   push:
     branches:
-      - live-server # Chỉ chạy khi có push vào nhánh live-server
-
+      - live-server
+  workflow_dispatch: # Cho phép bấm chạy lại thủ công khi cần
+concurrency:
+  group: deploy-live-server
+  cancel-in-progress: false # Đợi job trước chạy xong rồi mới chạy job sau
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Source Code
-        uses: actions/checkout@v4
-
+        uses: actions/checkout@v5
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: 20
-
+          node-version: 22
+          cache: npm
       - name: Install Dependencies
-        run: npm install
-
+        run: npm ci
       - name: Build Astro Project
         run: npm run build
-
       - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -33,4 +31,5 @@ jobs:
           local-dir: ./dist/
           server-dir: ./public_html/
           dangerous-clean-slate: false
-
+          max-connections: 1
+          timeout: 120000
