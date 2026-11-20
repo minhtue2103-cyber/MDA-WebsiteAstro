@@ -34,6 +34,6 @@ jobs:
           set net:reconnect-interval-base 5
           set net:timeout 60
           user "$FTP_USERNAME" "$FTP_PASSWORD"
-          mirror -R --delete --parallel=1 --exclude-glob .htaccess --exclude-glob .well-known/** --verbose ./dist/ ./public_html/
+          mirror -R --delete --parallel=1 --exclude-glob .htaccess --exclude-glob .well-known/** --verbose ./dist/ ./
           quit
           EOF
