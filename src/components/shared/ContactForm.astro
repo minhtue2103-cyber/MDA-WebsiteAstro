@@ -2,66 +2,97 @@
 interface Props {
   title?: string;
   subtitle?: string;
-  googleFormUrl?: string;
+  defaultService?: string;
+  extendedMode?: boolean;
 }
 
 const {
-  title = "Đăng Ký Tư Vấn & Nhận Lộ Trình Đào Tạo Thực Chiến",
-  subtitle = "Kết nối trực tiếp cùng Chuyên gia Ms Jen Phạm và Hội đồng Pháp lý MDA Hub để giải quyết triệt để các rào cản chứng từ, mã HS và quy chuẩn xuất khẩu nông sản.",
-  googleFormUrl = "https://forms.google.com/", // Thay bằng link Google Form của bạn
+  title = "Nhận lộ trình đào tạo — Phản hồi trong 24 giờ",
+  subtitle = "Vui lòng gửi yêu cầu của bạn ",
+  defaultService = "",
+  extendedMode = false,
 } = Astro.props;
 ---
 
 <div class="contact-cta-card" id="contact-form-block">
   <div class="contact-cta-grid">
-    <!-- Visual / Image Side -->
+    <!-- Left Column: Nội dung buổi tư vấn & Chuyên gia phụ trách -->
     <div class="contact-visual">
       <div class="visual-inner">
         <img
           src="/media/profile-jen-pham.webp"
-          alt="Ms Jen Phạm - Chuyên gia Chiến lược XNK MDA Hub"
+          alt="Ms Jen Phạm - Chuyên gia XNK"
           class="expert-avatar"
-          width="120"
-          height="120"
+          width="100"
+          height="100"
           loading="lazy"
         />
         <div class="visual-text">
           <span class="expert-name">Ms Jen Phạm</span>
-          <span class="expert-title">Đồng Sáng Lập &amp; Chuyên Gia XNK MDA Hub</span>
         </div>
-        <div class="trust-pills">
-          <span class="trust-pill"><i class="bi bi-shield-check"></i> Đào tạo 1-1</span>
-          <span class="trust-pill"><i class="bi bi-cpu"></i> Ứng dụng Local AI</span>
-          <span class="trust-pill"><i class="bi bi-check2-circle"></i> Chứng từ thực tế</span>
-        </div>
+
       </div>
     </div>
 
-    <!-- Content & Action Side -->
+    <!-- Right Column: Form nhúng trực tiếp trên mekongdeltaagri.com -->
     <div class="contact-content">
-      <span class="badge badge--accent">Đăng Ký Nhanh Qua Biểu Mẫu</span>
       <h3 class="contact-title">{title}</h3>
       <p class="contact-desc">{subtitle}</p>
 
-      <div class="action-box">
-        <a
-          href={googleFormUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn--secondary btn-form-cta"
-        >
-          <i class="bi bi-ui-checks"></i>
-          <span>Mở Biểu Mẫu Đăng Ký Tư Vấn (Google Form)</span>
-          <i class="bi bi-box-arrow-up-right external-icon"></i>
-        </a>
-        <span class="form-hint">* Biểu mẫu mở trong tab mới. Thời gian phản hồi trong vòng 24 giờ làm việc.</span>
-      </div>
+      <form class="mda-inline-form" data-mda-contact-form>
+        <div class="form-row-2">
+          <div class="form-field">
+            <label for="mda-name">Họ và tên <span class="req">*</span></label>
+            <input id="mda-name" name="name" type="text" required placeholder="VD: Nguyễn Văn A" />
+          </div>
+          <div class="form-field">
+            <label for="mda-phone">Số điện thoại / Zalo <span class="req">*</span></label>
+            <input id="mda-phone" name="phone" type="tel" required placeholder="VD: 090x.xxx.xxx" />
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-field">
+            <label for="mda-company">Công ty / Mặt hàng xuất khẩu</label>
+            <input id="mda-company" name="company" type="text" placeholder="VD: Trái cây sấy / Logistics" />
+          </div>
+          <div class="form-field">
+            <label for="mda-service">Nhu cầu tư vấn <span class="req">*</span></label>
+            <select id="mda-service" name="service" required>
+              <option value="" selected={defaultService === ""}>-- Chọn lộ trình quan tâm --</option>
+              <option value="Đào tạo XNK Thực chiến 1-1" selected={defaultService === "1-1"}>Đào tạo XNK Thực chiến 1-1 (Ms Jen Phạm)</option>
+              <option value="Đào tạo In-house Doanh nghiệp" selected={defaultService === "inhouse"}>Đào tạo Chuyên sâu Doanh nghiệp (In-house)</option>
+              <option value="Ứng dụng AI & Prompt XNK" selected={defaultService === "ai-xnk"}>Ứng dụng AI &amp; Middleware Local AI cho XNK</option>
+              <option value="AI Marketing & Tối ưu GEO B2B" selected={defaultService === "ai-marketing"}>AI Marketing Nông sản Quốc tế (GEO)</option>
+              <option value="Đăng ký buổi đánh giá năng lực 45 phút" selected={defaultService === "trial"}>Buổi đánh giá năng lực 45 phút miễn phí</option>
+            </select>
+          </div>
+        </div>
+
+        {extendedMode && (
+          <div class="form-field">
+            <label for="mda-note">Vướng mắc chứng từ hoặc mục tiêu cụ thể</label>
+            <textarea id="mda-note" name="note" rows="2" placeholder="VD: Cần rà soát mã HS hàng sấy thăng hoa hoặc chuẩn hóa quy trình L/C MT700..."></textarea>
+          </div>
+        )}
+
+        <button type="submit" class="btn btn--secondary btn-form-cta">
+          <i class="bi bi-send-check-fill"></i>
+          <span>Gửi Yêu Cầu Tư Vấn Ngay</span>
+        </button>
+
+        <span class="form-hint">
+          <i class="bi bi-lock-fill"></i> Bảo mật 100% hồ sơ · Phản hồi trong 24 giờ
+        </span>
+
+        <div class="form-feedback" role="status" aria-live="polite" hidden></div>
+      </form>
 
       <div class="quick-contact-row">
         <div class="quick-item">
           <i class="bi bi-telephone-outbound-fill"></i>
           <div>
-            <span class="quick-label">Hotline / Zalo trực tiếp:</span>
+            <span class="quick-label">Hotline / Zalo tiếp nhận tư vấn:</span>
             <a href="tel:0904622122" class="quick-val">0904.622.122 (Mr. Tuệ Phạm)</a>
           </div>
         </div>
@@ -77,6 +108,46 @@ const {
     </div>
   </div>
 </div>
+
+<script>
+  document.querySelectorAll('[data-mda-contact-form]').forEach((form) => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formEl = e.currentTarget as HTMLFormElement;
+      const data = new FormData(formEl);
+      const name = String(data.get('name') || '').trim();
+      const phone = String(data.get('phone') || '').trim();
+      const company = String(data.get('company') || 'Chưa cung cấp').trim();
+      const service = String(data.get('service') || '').trim();
+      const note = String(data.get('note') || '').trim();
+
+      const feedback = formEl.querySelector('.form-feedback') as HTMLElement | null;
+      if (!name || !phone || !service) {
+        if (feedback) {
+          feedback.hidden = false;
+          feedback.className = 'form-feedback form-feedback--error';
+          feedback.textContent = 'Vui lòng điền đầy đủ Họ tên, SĐT/Zalo và Nhu cầu tư vấn.';
+        }
+        return;
+      }
+
+      const subject = encodeURIComponent(`[MDA Hub] Yêu cầu tư vấn: ${service} - ${name}`);
+      const body = encodeURIComponent(
+        `Họ tên: ${name}\nSĐT/Zalo: ${phone}\nCông ty / Mặt hàng: ${company}\nNhu cầu: ${service}\nGhi chú: ${note || 'Không có'}`
+      );
+
+      if (feedback) {
+        feedback.hidden = false;
+        feedback.className = 'form-feedback form-feedback--success';
+        feedback.innerHTML =
+          `Đã ghi nhận thông tin của <strong>${name}</strong>. Bạn có thể ` +
+          `<a href="mailto:tue.pham@mekongdeltaagri.com?subject=${subject}&body=${body}" style="text-decoration:underline;font-weight:700;">gửi nhanh qua Email</a> ` +
+          `hoặc nhắn trực tiếp <a href="https://zalo.me/0904622122" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;font-weight:700;">Zalo 0904.622.122</a> để được phản hồi ngay trong 24 giờ.`;
+      }
+      formEl.reset();
+    });
+  });
+</script>
 
 <style>
   .contact-cta-card {
@@ -95,48 +166,47 @@ const {
 
   .contact-cta-grid {
     display: grid;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 280px 1fr;
     gap: 36px;
-    align-items: center;
+    align-items: start;
   }
 
   @media (max-width: 860px) {
     .contact-cta-grid {
       grid-template-columns: 1fr;
-      text-align: center;
       gap: 24px;
     }
   }
 
-  /* Visual side */
   .visual-inner {
     display: flex;
     flex-direction: column;
     align-items: center;
     background: var(--primary-50);
-    padding: 28px 20px;
+    padding: 24px 20px;
     border-radius: 16px;
     border: 1px dashed var(--primary-light);
   }
 
   .expert-avatar {
-    width: 100px;
-    height: 100px;
+    width: 92px;
+    height: 92px;
     border-radius: 50%;
     border: 3px solid #ffffff;
     box-shadow: var(--shadow-sm);
     margin-bottom: 12px;
+    object-fit: cover;
   }
 
   .visual-text {
     text-align: center;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
   }
 
   .expert-name {
     display: block;
     font-family: var(--font-heading);
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--primary-deep);
   }
@@ -149,47 +219,119 @@ const {
     line-height: 1.35;
   }
 
-  .trust-pills {
+  .consult-scope {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 14px;
+    border: 1px solid var(--border-subtle);
+    text-align: left;
+  }
+
+  .consult-scope__title {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--primary-deep);
+    margin-bottom: 8px;
+  }
+
+  .consult-scope__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
     gap: 6px;
-    width: 100%;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.45;
   }
 
-  .trust-pill {
-    background: #ffffff;
-    padding: 5px 10px;
-    border-radius: 6px;
-    font-size: 0.76rem;
-    font-weight: 600;
-    color: var(--primary-dark);
+  .consult-scope__list li {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
     gap: 6px;
   }
 
-  /* Content side */
+  .consult-scope__list i {
+    color: var(--primary-dark);
+    font-size: 0.95rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
   .contact-title {
-    font-size: 1.45rem;
+    font-size: 1.4rem;
     color: var(--primary-deep);
     margin: 8px 0 10px;
   }
 
   .contact-desc {
-    font-size: 0.95rem;
+    font-size: 0.93rem;
     color: var(--text-secondary);
     line-height: 1.6;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
 
-  .action-box {
-    margin-bottom: 24px;
+  .mda-inline-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  @media (max-width: 600px) {
+    .form-row-2 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: left;
+  }
+
+  .form-field label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--primary-deep);
+  }
+
+  .form-field .req {
+    color: #c25512;
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    color: var(--text-primary);
+    background: #ffffff;
+  }
+
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    outline: 2px solid var(--primary-light);
+    border-color: var(--primary-dark);
   }
 
   .btn-form-cta {
-    padding: 16px 28px;
-    font-size: 1.05rem;
+    padding: 14px 24px;
+    font-size: 1rem;
     font-weight: 700;
     width: 100%;
     display: flex;
@@ -197,42 +339,49 @@ const {
     justify-content: center;
     gap: 10px;
     border-radius: 10px;
-    text-decoration: none;
-    box-shadow: 0 4px 16px rgba(255, 144, 70, 0.4);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(255, 144, 70, 0.35);
     transition: all var(--transition-base);
   }
 
   .btn-form-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 22px rgba(255, 144, 70, 0.5);
-  }
-
-  .external-icon {
-    font-size: 0.85em;
-    opacity: 0.85;
+    box-shadow: 0 6px 22px rgba(255, 144, 70, 0.48);
   }
 
   .form-hint {
     display: block;
+    text-align: center;
     font-size: 0.8rem;
     color: var(--text-secondary);
-    margin-top: 8px;
-    font-style: italic;
   }
 
-  /* Quick contact */
+  .form-feedback {
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+
+  .form-feedback--success {
+    background: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+  }
+
+  .form-feedback--error {
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+  }
+
   .quick-contact-row {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    padding-top: 20px;
+    padding-top: 18px;
     border-top: 1px solid var(--border-subtle);
-  }
-
-  @media (max-width: 860px) {
-    .quick-contact-row {
-      justify-content: center;
-    }
   }
 
   .quick-item {
@@ -243,7 +392,7 @@ const {
   }
 
   .quick-item i {
-    font-size: 22px;
+    font-size: 20px;
     color: var(--primary-dark);
   }
 
@@ -255,12 +404,8 @@ const {
 
   .quick-val {
     display: block;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: var(--primary-deep);
-  }
-
-  .quick-val:hover {
-    color: var(--secondary);
   }
 </style>

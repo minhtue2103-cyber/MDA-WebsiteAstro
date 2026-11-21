@@ -1,5 +1,6 @@
 ---
 import InsidePageLayout from '../../layouts/InsidePageLayout.astro';
+import TestimonialSection from '../../components/shared/TestimonialSection.astro';
 import FaqAccordion from '../../components/ui/FaqAccordion.astro';
 
 const breadcrumbs = [
@@ -16,130 +17,196 @@ const subNavigation = [
   { name: 'AI Marketing', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ai-marketing/' },
 ];
 
-const bluf = "Chương trình Đào tạo XNK Thực chiến 1-1 do Chuyên gia Tuệ Phạm trực tiếp huấn luyện kèm riêng cho từng học viên. Khóa học tập trung giải quyết bài toán xử lý trọn vẹn bộ chứng từ thương mại (Invoice, Packing List, B/L, C/O, Phytosanitary), tra cứu mã HS và đàm phán hợp đồng xuất khẩu nông sản đi các thị trường Úc, Canada, Mỹ trong 6 - 8 tuần.";
+const bluf = "Chương trình Đào tạo XNK Thực chiến 1-1 do Ms Jen Phạm trực tiếp kèm cặp giúp học viên làm chủ trọn bộ chứng từ sống (Invoice, Packing List, B/L, C/O, L/C MT700), phân loại mã HS theo 6 quy tắc GRI và thủ tục FDA/BICON/SPS trong 6–8 tuần.";
 
 const courseSummary = {
   format: "Kèm 1-1 Online hoặc Trực tiếp tại TP.HCM",
-  duration: "8 tuần (16 buổi chuyên sâu + Hỗ trợ trọn đời)",
-  instructor: "Tuệ Phạm (Mr. Tuệ) — Sáng lập MDA Hub",
+  duration: "6–8 tuần (16 buổi chuyên sâu trên chứng từ sống)",
+  instructor: "Ms Jen Phạm — Đồng sáng lập & Chuyên gia XNK MD AGRI",
 };
 
 const faqs = [
   {
-    question: "Tôi chưa có kinh nghiệm về ngoại thương có tham gia học 1-1 được không?",
-    answer: "Hoàn toàn được. Lộ trình 1-1 được may đo riêng dựa trên xuất phát điểm của bạn, bắt đầu từ kiến thức nền tảng về Incoterms, đàm phán hợp đồng đến thực hành chuyên sâu trên từng tờ khai hải quan cụ thể."
+    question: "Người chưa có nền tảng ngoại thương có theo học khóa 1-1 được không?",
+    answer: "Được. Lộ trình 1-1 được thiết kế từ xuất phát điểm của từng học viên, đi từ bản chất Incoterms 2020 đến thực hành đọc hiểu và lập trọn bộ chứng từ cho một lô hàng nông sản thực tế."
   },
   {
-    question: "Lịch học có linh hoạt cho người đang đi làm không?",
-    answer: "Có. Vì là hình thức kèm 1-1 nên học viên được chủ động sắp xếp thời gian biểu phù hợp (buổi tối hoặc cuối tuần), và có thể linh hoạt chuyển đổi giữa học trực tiếp và học online qua Google Meet."
+    question: "Lịch học 1-1 sắp xếp thế nào cho người đang đi làm toàn thời gian?",
+    answer: "Học viên chủ động thống nhất lịch học linh hoạt vào buổi tối hoặc cuối tuần cùng Ms Jen Phạm, có thể chuyển đổi giữa học trực tiếp tại Quận 1 (TP.HCM) và trực tuyến qua Google Meet."
   },
   {
-    question: "Sau khóa học tôi có được hỗ trợ khi có lô hàng thực tế phát sinh không?",
-    answer: "MDA Hub cam kết bảo hành chuyên môn: Chuyên gia Tuệ Phạm sẽ tiếp tục cố vấn và kiểm tra chéo bộ chứng từ cho lô hàng đầu tiên của bạn sau khi kết thúc khóa học."
+    question: "Khóa học 1-1 có ứng dụng công cụ AI vào xử lý chứng từ không?",
+    answer: "Có. Ở Module 8, học viên được hướng dẫn viết Prompt 3 lớp để hỗ trợ tra mã HS và kiểm tra chéo bộ chứng từ, đi kèm nguyên tắc Data Masking (che đơn giá, tên đối tác) và tự đối chiếu biểu thuế gốc."
+  },
+  {
+    question: "Sau khi kết thúc 16 buổi, học viên có được hỗ trợ khi làm lô hàng thật không?",
+    answer: "Ms Jen Phạm tiếp tục hỗ trợ rà soát chéo bộ chứng từ và giải đáp các tình huống ngoại lệ (sửa B/L, kiểm dịch, bất hợp lệ L/C) cho lô hàng thực tế đầu tiên của học viên."
   }
 ];
 ---
 
 <InsidePageLayout
-  title="Đào Tạo XNK Thực Chiến 1-1 Cùng Chuyên Gia | MDA Hub"
-  description="Khóa đào tạo xuất nhập khẩu nông sản 1-1 cầm tay chỉ việc trên bộ chứng từ thật. Làm chủ nghiệp vụ hải quan, mã HS, C/O và kiểm dịch thực vật sau 8 tuần."
-  badge="Chương Trình Huấn Luyện Cá Nhân Hóa"
-  heroTitle="Đào Tạo Xuất Nhập Khẩu Thực Chiến 1-1 Cầm Tay Chỉ Việc"
-  lead="Chương trình kèm riêng 1 thầy - 1 trò do Chuyên gia Tuệ Phạm trực tiếp hướng dẫn, đưa bạn từ người mới bắt đầu đến năng lực tự chủ xử lý độc lập trọn gói các lô hàng nông sản xuất khẩu."
+  title="Đào Tạo XNK Thực Chiến 1-1 Trên Chứng Từ Sống | Ms Jen Phạm - MDA Hub"
+  description="Khóa đào tạo xuất nhập khẩu nông sản 1-1 cầm tay chỉ việc cùng Ms Jen Phạm trong 6–8 tuần: Incoterms 2020, mã HS (6 quy tắc GRI), ISBP 821, C/O và kiểm dịch FDA/BICON."
+  badge="Huấn Luyện Cá Nhân Hóa 1-1"
+  heroTitle="Đào tạo xuất nhập khẩu thực chiến 1-1 trên bộ chứng từ sống"
+  lead="Ms Jen Phạm trực tiếp kèm cặp từng học viên xử lý 10–15 bộ hồ sơ thật, rèn kỹ năng Quản lý ngoại lệ để tự tin điều hành lô hàng xuất khẩu nông sản."
+  heroImage="/media/mda-xnk-ai-contact.webp"
   breadcrumbs={breadcrumbs}
   subNavigation={subNavigation}
   blufText={bluf}
   courseSummary={courseSummary}
   authorRole="jen-pham"
+  showAuthor={true}
+  showGallery={false}
+  showTestimonials={false}
+  showContactForm={true}
+  defaultService="1-1"
 >
   <section>
-    <h2>1. Đối Tượng Phù Hợp Tham Gia Khóa Học 1-1</h2>
-    <ul>
-      <li><strong>Chủ cơ sở sản xuất, trang trại, xưởng chế biến nông sản:</strong> Muốn tự chủ xuất khẩu trực tiếp thay vì phụ thuộc hoàn toàn vào các đơn vị trung gian thương mại.</li>
-      <li><strong>Nhân viên kinh doanh (Sales), thu mua nội địa:</strong> Muốn chuyển sang mảng Xuất Nhập Khẩu nông sản để gia tăng thu nhập và cơ hội thăng tiến.</li>
-      <li><strong>Chuyên viên XNK mới vào nghề:</strong> Cần củng cố nghiệp vụ vững vàng để không bị sai sót khi xử lý chứng từ hải quan, tránh rủi ro bị phạt hoặc giam giữ hàng tại cảng đích.</li>
-    </ul>
+    <h2>Những rủi ro tốn kém khi học XNK theo lối lý thuyết đại cương</h2>
+    <div style="overflow-x: auto; margin-block: 18px;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.92rem; text-align: left;">
+        <thead>
+          <tr style="background-color: var(--primary-deep); color: #ffffff;">
+            <th style="padding: 12px 16px;">Rủi Ro / Chi Phí Ẩn</th>
+            <th style="padding: 12px 16px;">Nguyên Nhân Nghiệp Vụ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--border-subtle);">
+            <td style="padding: 12px 16px; font-weight: 600;">Áp nhầm mã HS bị truy thu thuế sau thông quan</td>
+            <td style="padding: 12px 16px;">Không phân biệt được hàng tươi (Chương 08) và hàng sấy/chế biến (Chương 20) theo 6 quy tắc GRI.</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle); background-color: #fafcf8;">
+            <td style="padding: 12px 16px; font-weight: 600;">Phí bất hợp lệ L/C và chậm thanh toán ngân hàng</td>
+            <td style="padding: 12px 16px;">Thiếu kỹ năng rà soát chéo ngày giao hàng, mô tả hàng trên Invoice – B/L theo UCP 600 &amp; ISBP 821.</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle);">
+            <td style="padding: 12px 16px; font-weight: 600;">Hàng bị giữ hoặc trả về tại cảng Úc, Mỹ</td>
+            <td style="padding: 12px 16px;">Chưa đồng bộ chứng nhận kiểm dịch (Phyto) với điều kiện BICON hoặc thiếu Prior Notice FDA.</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle); background-color: #fafcf8;">
+            <td style="padding: 12px 16px; font-weight: 600;">Học xong khóa đại trà vẫn lúng túng hồ sơ thật</td>
+            <td style="padding: 12px 16px;">Chỉ học slide lý thuyết chung chung, chưa từng xử lý tình huống trễ tàu hay tu chỉnh chứng từ.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <section>
-    <h2>2. Khung Chương Trình Huấn Luyện Chi Tiết (8 Module Thực Chiến)</h2>
-    <div style="display: flex; flex-direction: column; gap: 16px; margin-block: 24px;">
-      <div class="card card--tint" style="padding: 18px 24px;">
-        <h3 style="font-size: 1.1rem; color: var(--primary-deep); margin-bottom: 6px;">
-          Module 1: Tổng quan Thị trường &amp; Incoterms 2020 trong Nông sản
+    <h2>Khung chương trình 8 module thực chiến cùng Ms Jen Phạm</h2>
+    <div style="display: flex; flex-direction: column; gap: 14px; margin-block: 20px;">
+      <div class="card card--tint" style="padding: 16px 22px;">
+        <h3 style="font-size: 1.05rem; color: var(--primary-deep); margin-bottom: 4px;">
+          Module 1: Incoterms 2020 &amp; Điểm chuyển giao rủi ro hàng nông sản
         </h3>
         <p style="font-size: 0.9rem; margin: 0; color: var(--text-secondary);">
-          Phân tích các điều kiện giao hàng phổ biến (FOB cảng Cát Lái/Hải Phòng, CIF cảng Melbourne/Los Angeles, CFR). Cách phân chia rủi ro hư hỏng hàng hóa và chi phí vận tải biển.
+          Phân tích FOB, FCA, CIF, CFR, DDP trên tuyến biển và hàng không; kiểm soát chi phí và trách nhiệm bảo hiểm khi đi container lạnh.
         </p>
       </div>
 
-      <div class="card card--tint" style="padding: 18px 24px;">
-        <h3 style="font-size: 1.1rem; color: var(--primary-deep); margin-bottom: 6px;">
-          Module 2: Đàm Phán &amp; Soạn Thảo Hợp Đồng Ngoại Thương (Sales Contract)
+      <div class="card card--tint" style="padding: 16px 22px;">
+        <h3 style="font-size: 1.05rem; color: var(--primary-deep); margin-bottom: 4px;">
+          Module 2: Hợp đồng ngoại thương (Sales Contract) &amp; Thanh toán L/C
         </h3>
         <p style="font-size: 0.9rem; margin: 0; color: var(--text-secondary);">
-          Thiết lập các điều khoản bảo vệ người bán: Quy cách chất lượng (Specs), dung sai khối lượng, phương thức thanh toán an toàn (L/C không hủy ngang, T/T đặt cọc) và điều khoản bất khả kháng.
+          Cài đặt điều khoản phòng thủ chất lượng, độ ẩm và rà soát điện L/C MT700 theo UCP 600 và ISBP 821 để tránh bất hợp lệ.
         </p>
       </div>
 
-      <div class="card card--tint" style="padding: 18px 24px;">
-        <h3 style="font-size: 1.1rem; color: var(--primary-deep); margin-bottom: 6px;">
-          Module 3: Giải Mã Phân Loại Mã HS &amp; Tính Thuế Nông Sản
+      <div class="card card--tint" style="padding: 16px 22px;">
+        <h3 style="font-size: 1.05rem; color: var(--primary-deep); margin-bottom: 4px;">
+          Module 3: Phân loại mã HS theo 6 quy tắc GRI &amp; Biểu thuế 2026
         </h3>
         <p style="font-size: 0.9rem; margin: 0; color: var(--text-secondary);">
-          Thực hành tra cứu biểu thuế XNK theo Thông tư 85/2026/TT-BTC. Phân biệt chính xác giữa Chương 08 (trái cây tươi), Chương 11 (bột) và Chương 20 (chế biến, sấy thăng hoa).
+          Tra cứu và đối chiếu mã HS theo Thông tư 85/2026/TT-BTC, 42/2026/TT-BCT, 110/2026/TT-BTC; phân định rõ hàng tươi và chế biến sâu.
         </p>
       </div>
 
-      <div class="card card--tint" style="padding: 18px 24px;">
-        <h3 style="font-size: 1.1rem; color: var(--primary-deep); margin-bottom: 6px;">
-          Module 4: Kiểm Soát Bộ Chứng Từ Thương Mại (Commercial Invoice, Packing List)
+      <div class="card card--tint" style="padding: 16px 22px;">
+        <h3 style="font-size: 1.05rem; color: var(--primary-deep); margin-bottom: 4px;">
+          Module 4: Lập &amp; Kiểm soát Commercial Invoice, Packing List
         </h3>
         <p style="font-size: 0.9rem; margin: 0; color: var(--text-secondary);">
-          Cách lập và rà soát số liệu trọng lượng tịnh (Net Weight), tổng trọng lượng (Gross Weight), quy cách đóng thùng, pallet và tính toán thể tích khối (CBM).
+          Chuẩn hóa số liệu Net Weight, Gross Weight, quy cách đóng thùng/pallet, thể tích CBM và khớp nối logic giữa các chứng từ.
         </p>
       </div>
 
-      <div class="card card--tint" style="padding: 18px 24px;">
-        <h3 style="font-size: 1.1rem; color: var(--primary-deep); margin-bottom: 6px;">
-          Module 5: Chứng Nhận Xuất Xứ Hàng Hóa (C/O) &amp; Tối Ưu Ưu Đãi FTA
+      <div class="card card--tint" style="padding: 16px 22px;">
+        <h3 style="font-size: 1.05rem; color: var(--primary-deep); margin-bottom: 4px;">
+          Module 5: Chứng nhận xuất xứ C/O &amp; Tối ưu ưu đãi FTA
         </h3>
         <p style="font-size: 0.9rem; margin: 0; color: var(--text-secondary);">
-          Hướng dẫn hồ sơ cấp C/O mẫu B, mẫu D, mẫu EUR.1, mẫu CPTPP qua hệ thống EcoSys của Bộ Công Thương. Khai báo tiêu chí xuất xứ WO (xuất xứ thuần túy nông nghiệp) và RVC.
+          Lập hồ sơ cấp C/O Form B, D, EUR.1, CPTPP trên EcoSys; chứng minh tiêu chí WO và RVC cho nguyên liệu nông sản.
         </p>
       </div>
 
-      <div class="card card--tint" style="padding: 18px 24px;">
-        <h3 style="font-size: 1.1rem; color: var(--primary-deep); margin-bottom: 6px;">
-          Module 6: Thủ Tục Kiểm Dịch Thực Vật (Phytosanitary) &amp; Tiêu Chuẩn Nước Nhập Khẩu
+      <div class="card card--tint" style="padding: 16px 22px;">
+        <h3 style="font-size: 1.05rem; color: var(--primary-deep); margin-bottom: 4px;">
+          Module 6: Kiểm dịch thực vật (Phyto) &amp; Chuẩn FDA, BICON, SPS
         </h3>
         <p style="font-size: 0.9rem; margin: 0; color: var(--text-secondary);">
-          Đăng ký kiểm dịch tại Chi cục Bảo vệ thực vật vùng II. Quy trình kiểm tra dư lượng, xử lý chiếu xạ, hơi nước nóng và khai báo trực tuyến trên hệ thống BICON (Úc) và Prior Notice FDA (Mỹ).
+          Thực hành hồ sơ kiểm dịch, xử lý chiếu xạ/hơi nước nóng và khai báo BICON (Úc), Prior Notice FDA (Mỹ), Health Canada.
         </p>
       </div>
 
-      <div class="card card--tint" style="padding: 18px 24px;">
-        <h3 style="font-size: 1.1rem; color: var(--primary-deep); margin-bottom: 6px;">
-          Module 7: Booking Tàu, Vận Đơn Đường Biển (B/L) &amp; Bảo Hiểm Hàng Hóa
+      <div class="card card--tint" style="padding: 16px 22px;">
+        <h3 style="font-size: 1.05rem; color: var(--primary-deep); margin-bottom: 4px;">
+          Module 7: Booking tàu, Vận đơn (B/L) &amp; Xử lý ngoại lệ cảng biển
         </h3>
         <p style="font-size: 0.9rem; margin: 0; color: var(--text-secondary);">
-          Kỹ năng làm việc với Forwarder và Hãng tàu, cài đặt nhiệt độ container lạnh (-18°C hay +2°C đến +5°C), kiểm tra bản nháp Master Bill / House Bill và lập hồ sơ bảo hiểm loại A.
+          Cài nhiệt độ container reefer, kiểm tra nháp MBL/HBL, xử lý tình huống trễ ETD/ETA và Switch Bill.
         </p>
       </div>
 
-      <div class="card card--tint" style="padding: 18px 24px;">
-        <h3 style="font-size: 1.1rem; color: var(--primary-deep); margin-bottom: 6px;">
-          Module 8: Thực Hành Khai Tờ Khai Hải Quan Điện Tử (VNACCS/VCIS) &amp; Ứng Dụng AI
+      <div class="card card--tint" style="padding: 16px 22px;">
+        <h3 style="font-size: 1.05rem; color: var(--primary-deep); margin-bottom: 4px;">
+          Module 8: Truyền tờ khai VNACCS &amp; Ứng dụng AI kiểm tra chéo an toàn
         </h3>
         <p style="font-size: 0.9rem; margin: 0; color: var(--text-secondary);">
-          Truyền tờ khai hải quan thử nghiệm và sử dụng các câu lệnh AI chuyên sâu để rà soát lỗi logic toàn bộ bộ hồ sơ chỉ trong 60 giây.
+          Thực hành khai tờ khai điện tử và dùng Prompt 3 lớp kèm Data Masking (giữ nguyên tắc Human-in-the-Loop) để rà lỗi trước khi gửi ngân hàng.
         </p>
       </div>
     </div>
   </section>
 
   <section>
-    <FaqAccordion items={faqs} title="Câu Hỏi Thường Gặp Về Khóa Học 1-1" />
+    <h2>So sánh cách học truyền thống và mô hình kèm 1-1 tại MDA Hub</h2>
+    <div style="overflow-x: auto; margin-block: 18px;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.92rem; text-align: left;">
+        <thead>
+          <tr style="background-color: var(--primary-deep); color: #ffffff;">
+            <th style="padding: 12px 16px;">Cách Học Đại Trà</th>
+            <th style="padding: 12px 16px;">Đào Tạo 1-1 Tại MDA Hub</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--border-subtle);">
+            <td style="padding: 12px 16px;">Học chung 30–50 người theo giáo trình cố định</td>
+            <td style="padding: 12px 16px;">Kèm riêng 1-1 theo mặt hàng và tốc độ tiếp thu của học viên</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle); background-color: #fafcf8;">
+            <td style="padding: 12px 16px;">Thực hành trên bộ mẫu chung chung ít cập nhật</td>
+            <td style="padding: 12px 16px;">Thực hành trên 10–15 bộ chứng từ sống và hồ sơ thật</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle);">
+            <td style="padding: 12px 16px;">Chỉ dạy thao tác nhập liệu thủ công</td>
+            <td style="padding: 12px 16px;">Rèn kỹ năng Quản lý ngoại lệ và dùng Prompt AI an toàn dữ liệu</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <TestimonialSection
+    title="Phản Hồi Từ Học Viên Khóa 1-1"
+    subtitle="Trải nghiệm thực tế sau 6–8 tuần đồng hành cùng Ms Jen Phạm."
+    filterIndices={[1]}
+  />
+
+  <section>
+    <FaqAccordion items={faqs} title="Câu Hỏi Thường Gặp Về Khóa Học XNK 1-1" renderSchema={true} />
   </section>
 </InsidePageLayout>
-

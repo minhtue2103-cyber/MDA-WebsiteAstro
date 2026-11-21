@@ -1,5 +1,6 @@
 ---
 import InsidePageLayout from '../layouts/InsidePageLayout.astro';
+import AuthorGeoBox from '../components/shared/AuthorGeoBox.astro';
 
 const breadcrumbs = [
   { name: 'Trang chủ', url: '/' },
@@ -7,166 +8,137 @@ const breadcrumbs = [
 ];
 
 const subNavigation = [
-  { name: 'Câu chuyện MDA', url: '#cau-chuyen', active: true },
+  { name: 'Câu chuyện MD AGRI', url: '#cau-chuyen', active: true },
   { name: 'Sứ mệnh "True to Fruit"', url: '#su-menh' },
-  { name: 'Tầm nhìn AI Nông sản', url: '#tam-nhin' },
-  { name: 'Tác động & Con số', url: '#con-so' },
-  { name: 'Giá trị cốt lõi', url: '#gia-tri' },
+  { name: 'Đội ngũ chuyên gia', url: '#chuyen-gia' },
+  { name: 'Con số thực tế', url: '#con-so' },
 ];
 
-const bluf = "Mekong Delta Agri (MDA Hub — MD AGRI TRADING CO., LTD / Minh Tam Trading) là trung tâm tri thức và tư vấn pháp lý xuất nhập khẩu nông sản kết hợp giải pháp AI thực chiến tại TP.HCM. Được sáng lập và dẫn dắt bởi Ms Jen Phạm, chúng tôi hỗ trợ doanh nghiệp nông nghiệp Việt Nam vượt qua rào cản kỹ thuật khắt khe (FDA, BICON, SPS) để xuất khẩu bền vững sang Úc, Canada, EU và Hoa Kỳ.";
+const bluf = "Công ty TNHH Thương mại MD AGRI (Mekong Delta Agri / MDA Hub) là đơn vị đào tạo xuất nhập khẩu nông sản thực chiến và tư vấn ứng dụng AI tại TP.HCM. Với hai chuyên gia dẫn dắt là Ms Jen Phạm (Pháp lý & Nghiệp vụ XNK) và Mr. Tuệ Phạm (Middleware Local AI & GEO), chúng tôi hỗ trợ doanh nghiệp xuất khẩu sang Mỹ, Úc, Canada và EU.";
 ---
 
 <InsidePageLayout
-  title="Giới Thiệu Về Mekong Delta Agri (MDA Hub) | Sứ Mệnh & Tầm Nhìn"
-  description="Khám phá hành trình hình thành của Mekong Delta Agri, sứ mệnh 'True to Fruit', triết lý đào tạo thực chiến và tầm nhìn tiên phong ứng dụng AI cho ngành nông sản xuất khẩu Việt Nam."
-  badge="Về Chúng Tôi"
-  heroTitle="Giới Thiệu Về Mekong Delta Agri (MDA Hub)"
-  lead="Được thành lập từ tâm huyết với nông sản Đồng bằng Sông Cửu Long, MDA Hub là cầu nối tri thức vững chắc đưa trái cây và thực phẩm chế biến Việt Nam chinh phục các tiêu chuẩn khắt khe toàn cầu."
-  heroImage="https://picsum.photos/id/1018/1200/480"
+  title="Giới Thiệu Công Ty TNHH Thương Mại MD AGRI (MDA Hub) | Đội Ngũ & Sứ Mệnh"
+  description="Hồ sơ pháp nhân Công ty TNHH Thương mại MD AGRI (MDA Hub), vai trò chuyên gia Ms Jen Phạm & Mr. Tuệ Phạm, sứ mệnh True to Fruit và bộ số liệu xác thực."
+  badge="Về MD AGRI"
+  heroTitle="Công ty TNHH Thương mại MD AGRI (MDA Hub) — Tư vấn XNK & AI nông sản"
+  lead="Đồng hành cùng doanh nghiệp xuất khẩu nông sản Việt Nam chuẩn hóa chứng từ pháp lý, kiểm dịch quốc tế và ứng dụng AI an toàn dữ liệu."
+  heroImage="/media/coaching_1_1.webp"
   breadcrumbs={breadcrumbs}
   subNavigation={subNavigation}
   blufText={bluf}
-  authorRole="jen-pham"
+  showAuthor={false}
+  showGallery={false}
+  showTestimonials={false}
+  showContactForm={true}
 >
-  <!-- Section 1: Câu chuyện khởi nguồn (Split Story Block with Lorem Image) -->
   <section id="cau-chuyen" class="story-section">
-    <h2>1. Câu Chuyện Khởi Nguồn: Từ Nỗi Trăn Trở Của Người Làm Nông Nghiệp</h2>
-    
+    <h2>Vì sao MD AGRI được thành lập từ bài toán thực tế tại cảng đến?</h2>
+
     <div class="story-split">
       <div class="story-split__text">
         <p>
-          Việt Nam may mắn sở hữu thổ nhưỡng trù phú bậc nhất thế giới tại Đồng bằng Sông Cửu Long, nơi cho ra đời những giống trái cây nhiệt đới thơm ngon đặc sắc như xoài cát Hòa Lộc, sầu riêng Ri6, bưởi da xanh và thanh long. Tuy nhiên, trong suốt nhiều năm qua, người nông dân và doanh nghiệp xuất khẩu luôn phải đối mặt với điệp khúc <em>"được mùa mất giá"</em> hoặc những cú sốc lớn khi container hàng bị giữ lại, trả về từ các cảng quốc tế vì không đáp ứng rào cản kỹ thuật kiểm dịch.
+          Đồng bằng Sông Cửu Long sở hữu nhiều mặt hàng nông sản giá trị cao như xoài cát Hòa Lộc, sầu riêng, thanh long và trái cây sấy thăng hoa. Tuy nhiên, nhiều doanh nghiệp xuất khẩu vẫn gặp rủi ro container bị giữ tại cảng đích hoặc bị truy thu thuế chỉ vì sai lệch nhỏ trên chứng từ hoặc áp nhầm mã HS.
         </p>
         <p>
-          Chứng kiến những giọt mồ hôi của nhà nông và sự tổn thất nặng nề của doanh nghiệp xuất khẩu chỉ vì một sai sót nhỏ trong phân loại mã HS hay thiếu sót hồ sơ kiểm dịch thực vật, <strong>Công ty TNHH Thương mại MD AGRI (Minh Tam Trading / MDA Hub)</strong> đã được thành lập với mục tiêu trở thành điểm tựa tri thức pháp lý và công nghệ độc lập cho cộng đồng xuất khẩu nông sản Việt Nam.
+          <strong>Công ty TNHH Thương mại MD AGRI (MDA Hub)</strong> ra đời tại TP.HCM nhằm cung cấp điểm tựa đào tạo thực chiến và cố vấn quy trình độc lập, giúp doanh nghiệp tự chủ hồ sơ xuất khẩu thay vì phụ thuộc hoàn toàn vào trung gian.
         </p>
       </div>
       <div class="story-split__media">
         <img
-          src="https://picsum.photos/id/1052/600/420"
-          alt="Vùng nguyên liệu nông sản Đồng bằng Sông Cửu Long"
+          src="/media/asian-female-farmer-see-growth-pineapple-farm-agricultural-industry-agriculture-business-concept.webp"
+          alt="Vùng nguyên liệu nông sản xuất khẩu đạt chuẩn ĐBSCL"
           width="600"
           height="420"
           loading="lazy"
           class="story-img"
         />
-        <span class="story-img-caption">Vùng nguyên liệu trái cây nhiệt đới đạt chuẩn xuất khẩu ĐBSCL</span>
+        <span class="story-img-caption">Vùng nguyên liệu trái cây nhiệt đới hướng tới chuẩn xuất khẩu Mỹ, Úc, Canada, EU</span>
       </div>
     </div>
   </section>
 
-  <!-- Section 2: Sứ mệnh True to Fruit (Split Block 2) -->
   <section id="su-menh" class="story-section">
-    <h2>2. Sứ Mệnh "True to Fruit" &amp; Minh Bạch Hóa Pháp Lý</h2>
-    
+    <h2>Sứ mệnh True to Fruit và minh bạch hóa quy trình xuất khẩu</h2>
+
     <div class="story-split story-split--reverse">
       <div class="story-split__text">
         <p>
-          Triết lý hoạt động cốt lõi của MDA Hub gói gọn trong phương châm <strong>"True to Fruit — Trọn Vẹn Giá Trị Nông Sản Việt"</strong>:
+          Triết lý <strong>True to Fruit — Trọn vẹn giá trị nông sản Việt</strong> được cụ thể hóa thành ba nguyên tắc làm việc rõ ràng:
         </p>
         <ul class="styled-list">
           <li>
-            <strong>Minh bạch hóa chuỗi cung ứng:</strong> Xóa bỏ tình trạng mù mờ thông tin chứng từ, giúp doanh nghiệp tự chủ hoàn toàn từ khâu đăng ký mã số vùng trồng (PUC), mã cơ sở đóng gói (PHC) đến tờ khai hải quan điện tử.
+            <strong>Minh bạch chuỗi chứng từ:</strong> Chuẩn hóa từ mã số vùng trồng (PUC), cơ sở đóng gói (PHC) đến Commercial Invoice, Packing List, B/L và tờ khai hải quan.
           </li>
           <li>
-            <strong>Đơn giản hóa rào cản pháp lý:</strong> Giải mã các quy định phức tạp của Bộ Nông nghiệp Úc (hệ thống BICON), Cục Quản lý Thực phẩm và Dược phẩm Hoa Kỳ (FDA) và chuẩn mực SPS thành các bảng kiểm tra (Checklist) hành động cụ thể.
+            <strong>Giải mã rào cản kỹ thuật:</strong> Chuyển hóa quy định của BICON (Úc), FDA (Mỹ), Health Canada và SPS thành bảng kiểm tra (Checklist) hành động cụ thể.
           </li>
           <li>
-            <strong>Chuyển giao tri thức thực chiến:</strong> Huấn luyện nhân sự xuất nhập khẩu theo phương pháp "cầm tay chỉ việc", trực tiếp trên chính bộ chứng từ sống và lô hàng thật của doanh nghiệp.
+            <strong>Thực chiến trên hồ sơ sống:</strong> Không giảng lý thuyết đại cương; học viên và doanh nghiệp thực hành trực tiếp trên chính bộ chứng từ của lô hàng thật.
           </li>
         </ul>
       </div>
       <div class="story-split__media">
         <img
-          src="https://picsum.photos/id/1067/600/420"
-          alt="Huấn luyện thực chiến chứng từ XNK nông sản"
-          width="600"
-          height="420"
+          src="/media/mda-xnk-ai-contact.webp"
+          alt="Huấn luyện thực chiến 1-1 trên bộ chứng từ xuất nhập khẩu tại MDA Hub"
           loading="lazy"
           class="story-img"
         />
-        <span class="story-img-caption">Mổ xẻ bộ chứng từ ngoại thương và rà soát điều khoản hợp đồng quốc tế</span>
+        <span class="story-img-caption">Đào tạo trực tiếp trên bộ chứng từ ngoại thương và hợp đồng xuất khẩu</span>
       </div>
     </div>
   </section>
 
-  <!-- Pull Quote Banner (Farm Table Style) -->
   <blockquote class="farmtable-quote">
     <p>
-      "Một hợp đồng xuất khẩu thành công không chỉ nằm ở giá bán cạnh tranh, mà nằm ở sự chuẩn xác đến từng dấu phẩy trên bộ chứng từ và sự chuẩn bị kỹ lưỡng cho mọi tình huống ngoại lệ tại cảng đến."
+      "Một lô hàng xuất khẩu an toàn không chỉ nằm ở giá bán cạnh tranh, mà nằm ở sự chính xác của từng dòng chứng từ và khả năng kiểm soát ngoại lệ tại cảng đến."
     </p>
-    <cite>&mdash; Ms Jen Phạm, Đồng sáng lập &amp; Chuyên gia Chiến lược XNK MDA Hub</cite>
+    <cite>&mdash; Ms Jen Phạm, Đồng sáng lập &amp; Chuyên gia Chiến lược XNK MD AGRI</cite>
   </blockquote>
 
-  <!-- Section 3: Tầm nhìn AI Nông sản -->
-  <section id="tam-nhin" class="story-section">
-    <h2>3. Tầm Nhìn Tiên Phong AI Trong Ngành Nông Sản</h2>
+  <section id="chuyen-gia" class="story-section">
+    <h2>Đội ngũ chuyên gia phụ trách từng mảng chuyên môn</h2>
     <p>
-      Bước sang giai đoạn 2024 - 2030, MDA Hub định hướng trở thành trung tâm tri thức đầu tiên tại Việt Nam tích hợp trí tuệ nhân tạo (AI) và tối ưu hóa công cụ tạo sinh (GEO - Generative Engine Optimization) vào chuỗi giá trị nông sản:
+      Mọi hoạt động đào tạo và tư vấn tại MD AGRI được phân vai minh bạch giữa hai chuyên gia đồng sáng lập:
     </p>
-    <div class="vision-grid">
+    <div class="vision-grid" style="margin-bottom: 24px;">
       <div class="vision-card">
-        <div class="vision-card__icon"><i class="bi bi-cpu-fill"></i></div>
-        <h3>Tự Động Hóa Kiểm Soát Chứng Từ (Local AI)</h3>
+        <div class="vision-card__icon"><i class="bi bi-person-check-fill"></i></div>
+        <h3>Ms Jen Phạm — Pháp Lý &amp; Nghiệp Vụ XNK</h3>
         <p>
-          Phát triển mô hình Middleware AI độc lập tích hợp cơ chế Data Masking cục bộ, tự động đối soát Hợp đồng ngoại thương, L/C MT700 và phát hiện lỗi sai trong 60 giây theo chuẩn UCP 600 và ISBP 821.
+          Trực tiếp phụ trách các khóa Đào tạo XNK 1-1 và In-house chứng từ: rà soát L/C MT700 theo UCP 600 &amp; ISBP 821, phân loại mã HS theo 6 quy tắc GRI, và xử lý rào cản FDA, BICON, SPS.
         </p>
       </div>
       <div class="vision-card">
-        <div class="vision-card__icon"><i class="bi bi-globe-americas"></i></div>
-        <h3>Định Vị Nông Sản Chuẩn GEO Toàn Cầu</h3>
+        <div class="vision-card__icon"><i class="bi bi-cpu-fill"></i></div>
+        <h3>Mr. Tuệ Phạm — Công Nghệ AI &amp; Vận Hành</h3>
         <p>
-          Đưa dữ liệu kỹ thuật và năng lực tuân thủ của doanh nghiệp Việt Nam vào kho tri thức của các công cụ AI thế giới (ChatGPT, Perplexity, Gemini), mở ra kênh tiếp cận người mua B2B quốc tế với chi phí tối ưu.
+          Phụ trách tư vấn lộ trình doanh nghiệp (Hotline 0904.622.122), thiết kế luồng Middleware Local AI tích hợp Data Masking đối soát chứng từ trong 60 giây và chiến lược AI Marketing chuẩn GEO.
         </p>
       </div>
     </div>
+    <AuthorGeoBox role="jen-pham" extended={true} />
   </section>
 
-  <!-- Section 4: Con số tác động (Farm Table Impact Stats) -->
   <section id="con-so" class="story-section">
-    <h2>4. Dấu Ấn &amp; Tác Động Thực Tế</h2>
+    <h2>Số liệu hoạt động thực tế của MD AGRI</h2>
     <div class="stats-counter-grid">
       <div class="stat-counter-card">
-        <span class="stat-number">500+</span>
-        <span class="stat-label">Doanh nghiệp &amp; Học viên đã kết nối và tham gia đào tạo</span>
+        <span class="stat-number">150+</span>
+        <span class="stat-label">Học viên &amp; Doanh nghiệp đã đào tạo thực chiến</span>
       </div>
       <div class="stat-counter-card">
         <span class="stat-number">100%</span>
-        <span class="stat-label">Hồ sơ thương mại được bảo mật tuyệt đối theo chuẩn GDPR</span>
+        <span class="stat-label">Hồ sơ thương mại áp dụng Data Masking khi dùng AI</span>
       </div>
       <div class="stat-counter-card">
         <span class="stat-number">4</span>
-        <span class="stat-label">Thị trường xuất khẩu trọng điểm (Mỹ, Úc, Canada &amp; EU)</span>
+        <span class="stat-label">Thị trường trọng điểm (Mỹ, Úc, Canada &amp; EU)</span>
       </div>
       <div class="stat-counter-card">
         <span class="stat-number">60s</span>
-        <span class="stat-label">Thời gian đối soát chứng từ với Middleware Local AI</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 5: Hệ giá trị cốt lõi -->
-  <section id="gia-tri" class="story-section">
-    <h2>5. Hệ Giá Trị Cốt Lõi</h2>
-    <div class="grid-3" style="margin-top: 24px;">
-      <div class="card card--tint" style="border-top: 4px solid var(--primary-light);">
-        <h3 style="font-size: 1.15rem; color: var(--primary-deep);"><i class="bi bi-shield-check"></i> Chính Xác</h3>
-        <p style="font-size: 0.92rem; margin: 0; color: var(--text-secondary); line-height: 1.6;">
-          Mọi tư vấn và tài liệu đều dựa trên cơ sở pháp lý vững chắc từ các thông tư hải quan (85, 42, 110/2026/TT-BTC) và tiêu chuẩn quốc tế đã kiểm chứng.
-        </p>
-      </div>
-      <div class="card card--tint" style="border-top: 4px solid var(--secondary);">
-        <h3 style="font-size: 1.15rem; color: var(--secondary);"><i class="bi bi-tools"></i> Thực Chiến</h3>
-        <p style="font-size: 0.92rem; margin: 0; color: var(--text-secondary); line-height: 1.6;">
-          Nói không với lý thuyết suông; giải quyết trực diện các bài toán ngoại lệ, rủi ro cảng đến của từng mặt hàng và doanh nghiệp cụ thể.
-        </p>
-      </div>
-      <div class="card card--tint" style="border-top: 4px solid var(--primary-dark);">
-        <h3 style="font-size: 1.15rem; color: var(--primary-dark);"><i class="bi bi-tree-fill"></i> Bền Vững</h3>
-        <p style="font-size: 0.92rem; margin: 0; color: var(--text-secondary); line-height: 1.6;">
-          Đồng hành dài hạn cùng người nông dân và doanh nghiệp xây dựng chuỗi cung ứng minh bạch, đạt chuẩn xanh toàn cầu.
-        </p>
+        <span class="stat-label">Thời gian đối soát 1 bộ chứng từ mẫu bằng Local AI</span>
       </div>
     </div>
   </section>

@@ -1,5 +1,6 @@
 ---
 import InsidePageLayout from '../../../layouts/InsidePageLayout.astro';
+import TestimonialSection from '../../../components/shared/TestimonialSection.astro';
 import FaqAccordion from '../../../components/ui/FaqAccordion.astro';
 
 const breadcrumbs = [
@@ -17,94 +18,116 @@ const subNavigation = [
   { name: 'AI Marketing', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ai-marketing/', active: true },
 ];
 
-const bluf = "Chương trình AI Marketing Nông Sản Quốc Tế tiên phong đào tạo chiến lược Story Answering và tối ưu hóa công cụ tạo sinh (GEO - Generative Engine Optimization). Giúp doanh nghiệp nông sản Việt Nam định vị thương hiệu kỹ thuật số chuẩn mực, để các hệ thống AI toàn cầu (ChatGPT, Perplexity, Gemini) chủ động đề xuất và trích dẫn sản phẩm của bạn tới các nhà nhập khẩu quốc tế.";
+const bluf = "Chương trình AI Marketing Nông sản Quốc tế của MD AGRI hướng dẫn đội ngũ Sales và Marketing xuất khẩu triển khai chiến lược Story Answering, chuẩn hóa dữ liệu kỹ thuật và cấu trúc nội dung để các công cụ tìm kiếm AI (ChatGPT, Perplexity, Gemini) trích dẫn chính xác năng lực nhà cung cấp tới người mua B2B.";
 
 const courseSummary = {
-  format: "Huấn luyện In-house chiến lược và thực hành triển khai tài sản số",
-  duration: "6 tuần (Bao gồm kiểm toán hiện diện số và tối ưu GEO)",
-  instructor: "Ban Công nghệ AI & GEO Marketing MDA Hub",
+  format: "Huấn luyện In-house thực hành trực tiếp trên website & tài sản số công ty",
+  duration: "6 tuần (Kiểm toán nội dung + Triển khai chuẩn hóa B2B)",
+  instructor: "Mr. Tuệ Phạm & Đội ngũ Chiến lược Nội dung B2B MD AGRI",
 };
 
 const faqs = [
   {
-    question: "Doanh nghiệp đã chạy quảng cáo B2B trên Alibaba/Google rồi thì có cần học GEO không?",
-    answer: "Rất cần. Quảng cáo trả phí (PPC) chỉ mang lại lượt nhấp khi bạn còn trả tiền. Tối ưu GEO giúp website của bạn trở thành nguồn dữ liệu gốc uy tín mà các cỗ máy AI trích dẫn tự nhiên và miễn phí trọn đời cho các câu hỏi chuyên môn của người mua hàng."
+    question: "Doanh nghiệp đã chạy quảng cáo trên Alibaba hoặc Google Ads thì có cần tối ưu nội dung cho AI tìm kiếm không?",
+    answer: "Có. Quảng cáo trả phí chỉ mang lại lượt truy cập khi còn ngân sách. Chuẩn hóa dữ liệu kỹ thuật, chứng chỉ (FDA, BRC, BICON) và câu trả lời trực diện giúp website trở thành nguồn tham chiếu tự nhiên khi nhà mua hàng hỏi các công cụ AI."
   },
   {
-    question: "GEO có yêu cầu phải viết lại toàn bộ website không?",
-    answer: "Không. MDA Hub sẽ hướng dẫn doanh nghiệp bổ sung khối câu trả lời trực diện BLUF, chuẩn hóa cấu trúc dữ liệu JSON-LD Schema và tích hợp tệp llms.txt để các AI Crawlers dễ dàng tiếp nhận dữ liệu."
+    question: "Tối ưu nội dung cho AI tìm kiếm có bắt buộc phải đập đi xây lại toàn bộ website không?",
+    answer: "Không. Đội ngũ kỹ thuật chỉ cần bổ sung phần tóm tắt trực diện ở đầu trang sản phẩm, khai báo dữ liệu có cấu trúc JSON-LD (Organization, Product, FAQPage) và cung cấp tệp /llms.txt rõ ràng."
+  },
+  {
+    question: "Kết quả đầu ra của khóa 6 tuần gồm những gì?",
+    answer: "Doanh nghiệp nhận được bộ khung nội dung trả lời câu hỏi kỹ thuật của nhà nhập khẩu, cấu trúc dữ liệu chuẩn Schema.org, bộ mẫu email chào hàng B2B và quy trình tự cập nhật nội dung bằng AI."
   }
 ];
 ---
 
 <InsidePageLayout
-  title="AI Marketing & Tối Ưu Hóa GEO Nông Sản Quốc Tế | MDA Hub"
-  description="Khóa đào tạo chiến lược Story Answering và Generative Engine Optimization (GEO) dành riêng cho doanh nghiệp xuất khẩu nông sản B2B Việt Nam."
-  badge="Tiếp Thị Xuất Khẩu Kỷ Nguyên AI"
-  heroTitle="AI Marketing Nông Sản & Chiến Lược GEO Quốc Tế"
-  lead="Chuyển dịch từ tiếp thị truyền thống sang kỷ nguyên Agentic Web: Định vị hồ sơ năng lực nông sản Việt để các công cụ AI toàn cầu trực tiếp giới thiệu đến nhà mua hàng quốc tế."
+  title="AI Marketing Nông Sản Quốc Tế & Tối Ưu Tìm Kiếm B2B | MDA Hub"
+  description="Đào tạo chiến lược Story Answering và chuẩn hóa dữ liệu kỹ thuật cho doanh nghiệp xuất khẩu nông sản B2B tiếp cận nhà mua hàng qua công cụ tìm kiếm AI."
+  badge="Tiếp Thị Xuất Khẩu B2B"
+  heroTitle="AI Marketing nông sản và chiến lược thu hút nhà mua hàng B2B quốc tế"
+  lead="Chuẩn hóa hồ sơ năng lực kỹ thuật, chứng chỉ xuất khẩu và câu trả lời chuyên môn để nhà nhập khẩu Mỹ, Úc, Canada, EU dễ dàng tìm thấy và tin tưởng doanh nghiệp bạn."
+  heroImage="/media/mda-xnk-ai-contact.webp"
   breadcrumbs={breadcrumbs}
   subNavigation={subNavigation}
   blufText={bluf}
   courseSummary={courseSummary}
+  authorRole="tue-pham"
+  showAuthor={false}
+  showGallery={false}
+  showTestimonials={false}
+  showContactForm={true}
+  defaultService="ai-marketing"
 >
   <section>
-    <h2>1. Cuộc Cách Mạng Tìm Kiếm Nhà Cung Cấp Của Người Mua B2B</h2>
-    <p>
-      Hiện nay, các giám đốc mua hàng (Purchasing Managers) tại Bắc Mỹ, Châu Âu và Úc ngày càng ít sử dụng công cụ tìm kiếm truyền thống để lọc hàng triệu kết quả chung chung. Họ chuyển sang sử dụng các mô hình AI tạo sinh như ChatGPT Search, Perplexity và Gemini với những câu hỏi phức tạp mang tính kỹ thuật cao:
-    </p>
-    <blockquote style="font-size: 1.05rem; color: var(--primary-deep); font-weight: 600;">
-      "Gợi ý 3 nhà xuất khẩu sầu riêng sấy thăng hoa uy tín tại miền Nam Việt Nam có chứng nhận FDA, tiêu chuẩn BRC và khả năng cung cấp mẫu thử nghiệm trong 7 ngày?"
-    </blockquote>
-    <p>
-      Nếu nội dung website của doanh nghiệp chỉ có lời văn hoa mỹ mà thiếu thông số kỹ thuật có cấu trúc, cỗ máy AI sẽ hoàn toàn bỏ qua doanh nghiệp của bạn.
-    </p>
+    <h2>Vì sao website nông sản viết hay vẫn không có thư hỏi hàng B2B?</h2>
+    <div style="overflow-x: auto; margin-block: 18px;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.92rem; text-align: left;">
+        <thead>
+          <tr style="background-color: var(--primary-deep); color: #ffffff;">
+            <th style="padding: 12px 16px;">Cách Làm Website Truyền Thống</th>
+            <th style="padding: 12px 16px;">Chuẩn Dữ Liệu B2B Tại MD AGRI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--border-subtle);">
+            <td style="padding: 12px 16px;">Viết lời giới thiệu chung chung ("chất lượng hàng đầu")</td>
+            <td style="padding: 12px 16px;">Công bố rõ mã HS, độ ẩm, quy cách đóng gói, chứng chỉ FDA/BRC/PUC.</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle); background-color: #fafcf8;">
+            <td style="padding: 12px 16px;">Thiếu cấu trúc dữ liệu máy đọc được (JSON-LD, llms.txt)</td>
+            <td style="padding: 12px 16px;">Khai báo đầy đủ thực thể pháp nhân, sản phẩm và FAQ để AI trích dẫn đúng.</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle);">
+            <td style="padding: 12px 16px;">Gửi email chào hàng hàng loạt bằng mẫu dịch máy thô cứng</td>
+            <td style="padding: 12px 16px;">Cá nhân hóa theo thị trường đích và rào cản kiểm dịch của từng nước nhập khẩu.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <section>
-    <h2>2. Bốn Trụ Cột Chiến Lược Được Chuyển Giao Trong Khóa Học</h2>
+    <h2>Bốn trụ cột triển khai trong 6 tuần huấn luyện In-house</h2>
     <div class="grid-2" style="margin-block: 24px;">
       <div class="card card--tint">
-        <h3 style="font-size: 1.15rem; color: var(--primary-deep);"><i class="bi bi-chat-quote-fill"></i> 1. Chiến Lược "Story Answering"</h3>
-        <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
-          Biến các câu hỏi kỹ thuật thường gặp của nhà nhập khẩu (về kiểm dịch, mã HS, quy trình chiếu xạ, giới hạn MRLs) thành các bài phân tích chuyên gia có cấu trúc trả lời trực diện.
+        <h3 style="font-size: 1.08rem; color: var(--primary-deep);"><i class="bi bi-chat-quote-fill"></i> Chiến lược Story Answering</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+          Chuyển hóa các câu hỏi kỹ thuật của nhà mua hàng (MRLs, chiếu xạ, mã HS, thời gian giao mẫu) thành bài viết trả lời trực diện.
         </p>
       </div>
 
       <div class="card card--tint">
-        <h3 style="font-size: 1.15rem; color: var(--primary-deep);"><i class="bi bi-code-slash"></i> 2. Dữ Liệu Có Cấu Trúc Schema.org Đa Tầng</h3>
-        <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
-          Khai báo chuẩn xác các thực thể thực (Entities): Định danh pháp nhân, chứng chỉ quốc tế (FDA, BICON), tiêu chuẩn an toàn thực phẩm để bot tìm kiếm hiểu rõ năng lực doanh nghiệp.
+        <h3 style="font-size: 1.08rem; color: var(--primary-deep);"><i class="bi bi-code-slash"></i> Dữ liệu có cấu trúc Schema.org</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+          Khai báo thực thể công ty, chứng nhận FDA/BICON/SPS và thông số sản phẩm giúp công cụ tìm kiếm hiểu chính xác năng lực.
         </p>
       </div>
 
       <div class="card card--tint">
-        <h3 style="font-size: 1.15rem; color: var(--primary-deep);"><i class="bi bi-filetype-txt"></i> 3. Thiết Lập Hồ Sơ Chuẩn llms.txt &amp; ARD</h3>
-        <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
-          Triển khai giao thức Agentic Resource Discovery (ARD) và tệp <code>/llms.txt</code>, biến website thành "sách giáo khoa số" sẵn sàng cho các AI Agent đọc hiểu.
+        <h3 style="font-size: 1.08rem; color: var(--primary-deep);"><i class="bi bi-filetype-txt"></i> Chuẩn hóa tệp llms.txt &amp; Catalog</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+          Tổ chức danh mục sản phẩm nông sản rõ ràng, có nguồn trích dẫn minh bạch để trợ lý AI dễ tổng hợp và giới thiệu.
         </p>
       </div>
 
       <div class="card card--tint">
-        <h3 style="font-size: 1.15rem; color: var(--primary-deep);"><i class="bi bi-envelope-paper-heart-fill"></i> 4. Tự Động Hóa Chăm Sóc Khách Hàng B2B</h3>
-        <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
-          Ứng dụng AI tạo mẫu thư chào hàng quốc tế (Cold Email B2B), kịch bản phản hồi Inquiry theo văn phong đàm phán thương mại bản xứ chuẩn xác.
+        <h3 style="font-size: 1.08rem; color: var(--primary-deep);"><i class="bi bi-envelope-paper-heart-fill"></i> Kịch bản chào hàng &amp; Phản hồi Inquiry</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+          Xây dựng bộ mẫu Cold Email và thư phản hồi đàm phán thương mại chuẩn văn phong B2B Bắc Mỹ, Úc và Châu Âu.
         </p>
       </div>
     </div>
   </section>
 
-  <section>
-    <h2>3. Kết Quả Đầu Ra Cho Doanh Nghiệp</h2>
-    <ul>
-      <li>Xây dựng được hệ thống nội dung số chuẩn GEO được tối ưu hóa toàn diện.</li>
-      <li>Tăng tỷ lệ chuyển đổi thư hỏi hàng (Inquiry) B2B chất lượng cao từ thị trường Âu - Mỹ - Úc.</li>
-      <li>Giảm thiểu ngân sách tiếp thị thương mại điện tử phụ thuộc vào các sàn trung gian.</li>
-    </ul>
-  </section>
+  <TestimonialSection
+    title="Hiệu Quả Thực Tế Từ Doanh Nghiệp Xuất Khẩu"
+    subtitle="Kết quả áp dụng Story Answering và chuẩn hóa thông số FDA trên website B2B."
+    filterIndices={[2]}
+  />
 
   <section>
-    <FaqAccordion items={faqs} title="Câu Hỏi Thường Gặp Về AI Marketing Nông Sản" />
+    <FaqAccordion items={faqs} title="Câu Hỏi Thường Gặp Về AI Marketing Nông Sản" renderSchema={true} />
   </section>
 </InsidePageLayout>
-
