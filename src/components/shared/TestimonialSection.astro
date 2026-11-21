@@ -2,11 +2,13 @@
 interface Props {
   title?: string;
   subtitle?: string;
+  filterIndices?: number[];
 }
 
 const {
   title = "Đánh Giá Từ Học Viên & Đối Tác Doanh Nghiệp",
-  subtitle = "Hơn 150+ cá nhân và doanh nghiệp xuất khẩu nông sản đã tự chủ nghiệp vụ chứng từ và tiếp cận thị trường quốc tế cùng MDA Hub.",
+  subtitle = "Hơn 150+ học viên và doanh nghiệp xuất khẩu nông sản đã chuẩn hóa chứng từ và tiếp cận thị trường quốc tế cùng MDA Hub.",
+  filterIndices,
 } = Astro.props;
 
 const testimonials = [
@@ -49,7 +51,7 @@ const testimonials = [
     </div>
 
     <div class="grid-3 testimonials-grid">
-      {testimonials.map((item) => (
+      {(filterIndices ? testimonials.filter((_, idx) => filterIndices.includes(idx)) : testimonials).map((item) => (
         <div class="card testimonial-card">
           <div class="card-top">
             <div class="quote-icon">

@@ -56,11 +56,11 @@ const modules = [
   },
   {
     code: "Tài liệu",
-    tag: "AI Intergration for Business",
+    tag: "AI Integration for Business",
     title: "Chiến lược Tích Hợp AI An Toàn cho Doanh Nghiệp",
-    desc: "Giải Mã Khách Quan Ai Dưới Góc Nhìn Quản Trị & Ảo Tưởng Công Nghệ",
+    desc: "Giải Mã Khách Quan AI Dưới Góc Nhìn Quản Trị & Thực Chiến Doanh Nghiệp",
     icon: "bi-graph-up-arrow",
-    image: "media/Ứng dụng AI vào Doanh Nghiệp.webp",
+    image: "/media/Ứng dụng AI vào Doanh Nghiệp.webp",
     downloadUrl: "/media/document/Ứng dụng AI vào Doanh Nghiệp.docx",
     fileName: "Ứng dụng AI vào Doanh Nghiệp.docx",
     fileFormat: "DOCX",
@@ -68,18 +68,17 @@ const modules = [
   {
     code: "Cập Nhật Chính Sách Thuế",
     tag: "Tài liệu",
-    title: "Thay Đổi Quy Định Về Hs Code & Chính Sách Thuế Tháng 09-2026",
+    title: "Thay Đổi Quy Định Về HS Code & Chính Sách Thuế Tháng 09-2026",
     desc: "Thiết lập lá chắn tài chính và rà soát tuân thủ hệ thống trước bộ ba thay đổi chính sách pháp lý: Thông tư 85/2026/TT-BTC, Thông tư 42/2026/TT-BCT và Thông tư 110/2026/TT-BTC",
     icon: "bi-folder-check",
-    image: "https://picsum.photos/id/1062/600/420",
+    image: "/media/MDA-AI-Compliance-1.webp",
     downloadUrl: "/media/document/THAY ĐỔI QUY ĐỊNH VỀ HS CODE & CHÍNH SÁCH THUẾ THÁNG 09-2026.docx",
     fileName: "THAY ĐỔI QUY ĐỊNH VỀ HS CODE & CHÍNH SÁCH THUẾ THÁNG 09-2026.docx",
     fileFormat: "DOCX",
   },
 ];
 
-// Double list for smooth infinite continuous auto-sliding marquee
-const doubleModules = [...modules, ...modules];
+const doubleModules = modules;
 
 const pdfUrl = "/media/document/Ứng dụng AI vào Doanh Nghiệp.docx";
 ---
@@ -441,7 +440,7 @@ const pdfUrl = "/media/document/Ứng dụng AI vào Doanh Nghiệp.docx";
      ===================================================================== */
   .cat_bottom_sec.ft-bg-in {
     position: relative;
-    background-image: url('https://picsum.photos/id/1018/1200/500');
+    background-image: url('/media/MDA-Hub-Banner-smaller.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

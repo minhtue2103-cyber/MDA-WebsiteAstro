@@ -2,13 +2,14 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import TestimonialSection from '../components/shared/TestimonialSection.astro';
 import TrainingGalleryPdf from '../components/shared/TrainingGalleryPdf.astro';
+import ContactForm from '../components/shared/ContactForm.astro';
 import FaqAccordion from '../components/ui/FaqAccordion.astro';
 import HeroWave from '../components/ui/HeroWave.astro';
 
 const heroSlides = [
   {
     image: '/media/MDA-Hub-Banner-smaller.webp',
-    alt: 'Sự thật về Xuất khẩu Trái cây Việt Nam & Chuỗi cung ứng ĐBSCL',
+    alt: 'Đào tạo Xuất khẩu Trái cây Việt Nam & Chuỗi cung ứng ĐBSCL - MDA Hub',
   },
   {
     image: '/media/nhung-linkedin-11.webp',
@@ -20,61 +21,65 @@ const heroSlides = [
   },
   {
     image: '/media/nhung-linkedin-13.webp',
-    alt: 'Phân loại Mã HS & Tuân thủ Thông tư Thuế Hải quan XNK 85/2026/TT-BTC',
+    alt: 'Phân loại Mã HS theo 6 quy tắc GRI & Thông tư 85/2026/TT-BTC',
   },
 ];
 
 const expertFaqs = [
   {
     question: "Làm thế nào để ứng dụng AI vào rà soát L/C và hợp đồng ngoại thương mà không lo ngại rò rỉ bí mật thương mại?",
-    answer: "MDA Hub áp dụng giải pháp AI tuân thủ bảo mật kết hợp Prompt Template chuyên ngành ngoại thương và cơ chế Data Masking ngay tại máy trạm. Trước khi dữ liệu chứng từ được đưa vào mô hình xử lý, toàn bộ thông tin nhạy cảm (tên đối tác, đơn giá, số tài khoản ngân hàng, điều khoản thương mại độc quyền) đều được ẩn danh hóa. AI tập trung đối soát chéo tính hợp lệ giữa Hợp đồng, L/C và bộ chứng từ (Invoice, B/L, C/O, Phyto) dựa trên tập quán quốc tế (UCP 600, ISBP 745, Incoterms 2020), loại bỏ rủi ro điều khoản gài bẫy mà không làm rò rỉ dữ liệu mật của doanh nghiệp."
+    answer: "MDA Hub phân tách rõ hai giải pháp: với nhu cầu đào tạo nhân sự, chúng tôi hướng dẫn dùng Prompt Engineering trên tài khoản doanh nghiệp (Zero Data Retention); với nhu cầu tự động hóa nội bộ, đội ngũ Mr. Tuệ Phạm triển khai Middleware Local AI tích hợp Data Masking tại máy trạm để che tên đối tác, đơn giá FOB/CIF và số tài khoản trước khi đối soát theo UCP 600, ISBP 821 và Incoterms 2020."
   },
   {
-    question: "Tại sao doanh nghiệp xuất khẩu trái cây sấy thăng hoa và nông sản chế biến thường gặp rủi ro phạt thuế hoặc ách tắc mã HS tại thị trường đích (như EU, Canada)?",
-    answer: "Trái cây tươi (Chương 08) và trái cây qua xử lý nhiệt hoặc sấy thăng hoa có bổ sung đường/phụ gia (thường chuyển sang Chương 20 hoặc 21) chịu mức thuế suất, quy tắc xuất xứ (PSR) và tiêu chuẩn kiểm tra an toàn thực phẩm hoàn toàn khác nhau. Sự không đồng nhất giữa danh mục quản lý chuyên ngành và biểu thuế, hoặc sai lệch ở cấp phân nhóm 6 số theo 6 quy tắc GRI, dễ khiến cơ quan hải quan nước nhập khẩu phân loại lại mã HS, truy thu thuế sau thông quan kèm tiền phạt lớn, thậm chí bị nghi ngờ gian lận thuế. MDA hỗ trợ doanh nghiệp xây dựng Bảng thẩm định thành phần, định mức chế biến sâu và thực hiện thủ tục Xác định trước mã HS (Prior Determination) để bảo đảm an toàn pháp lý tuyệt đối."
+    question: "Tại sao doanh nghiệp xuất khẩu trái cây sấy thăng hoa và nông sản chế biến thường gặp rủi ro phạt thuế hoặc ách tắc mã HS tại thị trường đích?",
+    answer: "Trái cây tươi (Chương 08) và trái cây sấy thăng hoa có bổ sung đường hoặc phụ gia (thường chuyển sang Chương 20 hoặc 21) chịu mức thuế suất, quy tắc xuất xứ (PSR) và tiêu chuẩn kiểm dịch khác nhau. Sai lệch ở cấp phân nhóm 6 số theo 6 quy tắc GRI dễ dẫn đến truy thu thuế sau thông quan. Ms Jen Phạm hỗ trợ lập bảng thẩm định thành phần và hồ sơ Xác định trước mã HS trước khi xuất bến."
   },
   {
-    question: "Doanh nghiệp SME hoặc hợp tác xã nông sản có bộ máy tinh gọn (<5 người) thì có thể tự chủ quy trình xuất nhập khẩu và ứng dụng AI được không?",
-    answer: "Hoàn toàn khả thi. MDA thiết kế mô hình đào tạo và chuyển giao thực chiến may đo cho các đội ngũ tinh gọn (đã chứng minh hiệu quả qua các case study vận hành Trading 2 chiều tuyến Canada và nông sản chế biến EU). Không cần đầu tư phần mềm đắt đỏ, doanh nghiệp được hướng dẫn chuẩn hóa luồng làm việc liên phòng ban (Sales - QC - Kho), ứng dụng AI để tự động hóa rà soát lỗi chứng từ (Invoice, Packing List, C/O, Phyto, Health Cert) và tự kê khai C/O ưu đãi FTA (Form EUR.1, CPTPP), giúp tiết kiệm hơn 50% thời gian xử lý sự vụ và tự chủ đến 80% quy trình xuất khẩu trực tiếp."
+    question: "Doanh nghiệp SME hoặc hợp tác xã nông sản quy mô nhỏ (<5 người XNK) có tự chủ quy trình và ứng dụng AI được không?",
+    answer: "Hoàn toàn khả thi nếu chuẩn hóa quy trình SOP trước khi tự động hóa. MDA thiết kế lộ trình may đo cho đội ngũ tinh gọn, giúp nhân sự rà soát chéo Invoice, Packing List, C/O (Form EUR.1, CPTPP), Phyto và Health Cert dưới cơ chế Human-in-the-Loop (AI gắn cờ ngoại lệ, con người kiểm duyệt cuối cùng) mà không cần thay thế phần mềm ERP sẵn có."
   },
   {
-    question: "Chương trình Huấn luyện Thực chiến của MDA có điểm gì khác biệt so với các khóa học xuất nhập khẩu đại trà trên thị trường?",
-    answer: "Khác biệt cốt lõi nằm ở định hướng chuyên sâu ngành dọc (trái cây nhiệt đới, nông sản chế biến sâu, hàng sức khỏe/mỹ phẩm) và giải quyết các bài toán rủi ro cao cấp: (1) Thực hành trực tiếp 100% trên bộ chứng từ thật của chính doanh nghiệp; (2) Giải mã kỹ thuật Audit L/C, ứng dụng giải pháp L/C UPAS giúp người bán nhận tiền sớm trong khi đối tác vẫn được trả chậm; (3) Cài cắm bộ điều khoản phòng thủ quốc tế (Model Clauses) về dung sai chất lượng/độ ẩm để chặn rủi ro khiếu nại (Quality Claims); (4) Tích hợp năng lực AI thẩm định đối tác và rà soát trọn bộ chứng từ trước khi tàu chạy."
+    question: "Chương trình Huấn luyện Thực chiến của MDA có điểm gì khác biệt so với các khóa học xuất nhập khẩu đại trà?",
+    answer: "Học viên thực hành trực tiếp trên 10–15 bộ chứng từ sống của doanh nghiệp ngành nông sản (trái cây tươi, sấy thăng hoa, thủy sản). Chương trình tập trung vào kỹ năng Quản lý ngoại lệ: xử lý bất hợp lệ L/C theo ISBP 821, cài điều khoản phòng thủ chất lượng/độ ẩm trên Sales Contract và ứng dụng bộ Prompt kiểm tra chéo hồ sơ trước khi tàu chạy."
   },
   {
-    question: "MDA Agri Hub hỗ trợ doanh nghiệp tháo gỡ 'mê cung quy định' (Compliance Maze: BICON Úc, FDA Mỹ, Health Canada, SPS) theo lộ trình như thế nào?",
-    answer: "MDA đồng hành theo quy trình phân tích và xử lý 3 bước chuẩn: Căn cứ pháp lý -> Xác định rủi ro kỹ thuật/tài chính -> Kịch bản hành động đa bên. Chúng tôi cung cấp cẩm nang thực chiến (Export Playbooks), rà soát tính đồng bộ giữa chứng nhận an toàn sinh học (Phyto, Health Cert, NPN Health Canada) với mã HS và tờ khai hải quan, đồng thời tích hợp công cụ tra cứu tự động và tư vấn chuyên sâu về rào cản kỹ thuật SPS/Kiểm dịch của các nước thành viên WTO, giúp lô hàng thông quan suôn sẻ ngay từ lần đầu xuất bến."
+    question: "MDA Hub hỗ trợ doanh nghiệp tháo gỡ rào cản kỹ thuật BICON (Úc), FDA (Mỹ), Health Canada và SPS theo lộ trình nào?",
+    answer: "Mỗi dự án doanh nghiệp bắt đầu bằng Giai đoạn Khảo sát 30 ngày (Discovery Phase) để rà soát mặt hàng, đối chiếu căn cứ pháp lý (Thông tư 85/2026/TT-BTC, 42/2026/TT-BCT, 110/2026/TT-BTC), kiểm tra tính đồng bộ giữa Phyto, Health Cert, NPN Health Canada với mã HS và bàn giao bảng kiểm (Checklist) hành động cho từng lô hàng."
   }
 ];
 ---
 
 <BaseLayout
-  title="Mekong Delta Agri (MDA Hub) | Đào tạo XNK Thực chiến, Tư vấn Pháp lý & Ứng dụng AI Doanh Nghiệp"
-  description="Hệ sinh thái tri thức và đào tạo Xuất Nhập Khẩu nông sản hàng đầu Việt Nam. Huấn luyện thực chiến 1-1 cùng Ms Jen Phạm, tư vấn chứng từ thương mại, mã HS, tuân thủ tiêu chuẩn FDA/BICON/SPS và đào tạo ứng dụng AI chuyên sâu cho doanh nghiệp XNK."
+  title="Mekong Delta Agri (MDA Hub) | Đào tạo XNK Nông sản Thực chiến & Ứng dụng AI Chứng từ"
+  description="Công ty TNHH Thương mại MD AGRI (MDA Hub) — Đào tạo XNK nông sản thực chiến 1-1 cùng Ms Jen Phạm, tư vấn mã HS, FDA/BICON/SPS và giải pháp Middleware Local AI bảo mật dữ liệu."
 >
-  <!-- SECTION 1: HERO & WELCOME TO MDA AGRO KNOWLEDGE HUB (Farm Table Style Bleed-Right) -->
+  <!-- SECTION 1: HERO & ĐỊNH VỊ HỆ SINH THÁI -->
   <section class="hero-section hero-section--bleed">
     <div class="hero-grid hero-grid--bleed">
-      <!-- Left Column: Chào Mừng & Định Vị (aligned with container left) -->
       <div class="hero-left hero-bleed-left">
-        <span class="badge">Cộng đồng TP.HCM về Chứng từ &amp; AI XNK</span>
+        <span class="badge">Công ty TNHH Thương mại MD AGRI &bull; TP.HCM</span>
         <h1 class="section-title hero-title">
-          Đào tạo XNK Thực chiến & Ứng dụng AI Doanh Nghiệp
+          Đào tạo XNK nông sản thực chiến &amp; Ứng dụng AI kiểm soát rủi ro chứng từ
         </h1>
         <p class="lead hero-lead">
-          <strong>MDA Hub</strong> là hệ sinh thái tri thức về Xuất Nhập Khẩu toàn diện dành cho ngành nông sản Việt Nam. Dưới sự dẫn dắt chuyên môn của <strong>Ms Jen Phạm</strong>, chúng tôi đơn giản hóa các rào cản pháp lý xuyên biên giới thông qua tư vấn tuân thủ chi tiết (<strong>FDA, BICON, SPS</strong>), phân loại mã HS chính xác và tích hợp AI an toàn cho doanh nghiệp tự chủ chuỗi cung ứng toàn cầu.
+          <strong>MDA Hub</strong> đào tạo nghiệp vụ xuất nhập khẩu trên bộ chứng từ sống và chuyển giao giải pháp AI bảo mật cho doanh nghiệp nông sản Việt Nam. Dưới sự dẫn dắt của <strong>Ms Jen Phạm</strong> (Pháp lý &amp; Nghiệp vụ) và <strong>Mr. Tuệ Phạm</strong> (Công nghệ AI &amp; Vận hành), doanh nghiệp tự chủ xuất khẩu sang Mỹ, Úc, Canada và EU.
         </p>
         <div class="hero-cta-group">
-          <a href="https://forms.google.com/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
-            <i class="bi bi-clipboard2-check"></i> Đăng Ký Tư Vấn
+          <a href="#contact-form-block" class="btn btn--secondary">
+            <i class="bi bi-clipboard2-check"></i> Nhận Tư Vấn Lộ Trình
           </a>
           <a href="/dich-vu/" class="btn btn--outline">
-            <i class="bi bi-arrow-right-circle"></i> Dịch Vụ của MDA
+            <i class="bi bi-arrow-right-circle"></i> Xem Các Gói Dịch Vụ
           </a>
+        </div>
+        <div class="hero-trust-strip" style="display: flex; flex-wrap: wrap; gap: 12px 20px; margin-top: 22px; font-size: 0.86rem; color: var(--primary-deep); font-weight: 600;">
+          <span><i class="bi bi-people-fill"></i> 150+ Học viên &amp; DN thực chiến</span>
+          <span><i class="bi bi-globe-americas"></i> 4 Thị trường (Mỹ, Úc, Canada, EU)</span>
+          <span><i class="bi bi-stopwatch-fill"></i> 60s Đối soát chứng từ mẫu</span>
+          <span><i class="bi bi-shield-lock-fill"></i> 100% Bảo mật Data Masking</span>
         </div>
       </div>
 
-      <!-- Right Column: Photo Full Chiều Cao, Width Tràn Ra Phải Màn Hình (Không Border) -->
       <div class="hero-right hero-bleed-right">
         <div class="hero-slider hero-slider--full" id="heroSlider">
           <div class="hero-slides-wrapper" id="heroSlidesTrack">
@@ -91,7 +96,6 @@ const expertFaqs = [
             ))}
           </div>
 
-          <!-- Slider Dots -->
           <div class="slider-dots slider-dots--floating" id="sliderDots">
             {heroSlides.map((_, i) => (
               <button
@@ -106,137 +110,128 @@ const expertFaqs = [
       </div>
     </div>
 
-    <!-- SVG Wave Divider (Animated on Homepage) -->
     <HeroWave animated={true} id="home" />
   </section>
 
-  <!-- SECTION 2: VÌ SAO CHỌN CHÚNG TÔI (Agro-Export Knowledge Style) -->
+  <!-- SECTION 2: 3 TRỤ CỘT GIẢI PHÁP B2B -->
   <section class="section section--white why-choose-section">
     <div class="container">
       <div class="section-header text-center">
-        <h2 class="section-title">Vì Sao Chọn Chúng Tôi</h2>
+        <h2 class="section-title">Doanh nghiệp xuất khẩu nông sản giải quyết bài toán nào cùng MDA Hub?</h2>
         <p class="lead">
-          Mekong Delta Agri (MDA Hub) mang đến bộ giải pháp 3 trụ cột vững chắc, kết hợp giữa nghiệp vụ xuất nhập khẩu nông sản thực chiến và công nghệ AI bảo mật cao cấp dành riêng cho doanh nghiệp Việt Nam.
+          Ba trụ cột kết hợp giữa thực chiến chứng từ cảng biển, tuân thủ pháp lý quốc tế và ứng dụng AI an toàn dữ liệu dành cho cá nhân và doanh nghiệp SME.
         </p>
       </div>
 
       <div class="grid-3 why-choose-grid">
-        <!-- Cột 1: Đào tạo ứng dụng quy trình -->
         <div class="why-card">
           <div class="why-card__badge">
-            <i class="bi bi-person-workspace"></i> Đào Tạo Ứng Dụng Quy Trình
+            <i class="bi bi-person-workspace"></i> Huấn Luyện 1-1 &amp; In-house
           </div>
-          <h3 class="why-card__title">Đào Tạo Ứng Dụng Quy Trình Thực Tế</h3>
+          <h3 class="why-card__title">Đào Tạo Quy Trình Trên Chứng Từ Sống</h3>
           <p class="why-card__desc">
-            Chương trình huấn luyệntheo đặc thù mặt hàng (trái cây tươi/sấy thăng hoa/ nông sản) và năng lực thực tế của doanh nghiệp. Học viên trực tiếp rà soát chứng từ  rèn luyện kỹ năng Quản lý rủi ro L/C và tháo gỡ điểm nghẽn thực chiến cùng Ms Jen Phạm.
+            Chương trình huấn luyện theo đặc thù mặt hàng (trái cây tươi, sấy thăng hoa, nông sản chế biến) giúp học viên trực tiếp xử lý bộ chứng từ thật cùng Ms Jen Phạm.
           </p>
           <ul class="why-card__features">
-            <li><i class="bi bi-check-circle-fill"></i> Trực tiếp rà soát các rủi ro trong các tình huống thực tế</li>
-            <li><i class="bi bi-check-circle-fill"></i> Kỹ năng xử lý thực chiến: trễ tàu, sai khác B/L, luồng Đỏ</li>
-            <li><i class="bi bi-check-circle-fill"></i> Đồng bộ quy trình liên phòng ban Kinh doanh &amp; Logistics</li>
+            <li><i class="bi bi-check-circle-fill"></i> Rà soát Invoice, Packing List, B/L, L/C MT700</li>
+            <li><i class="bi bi-check-circle-fill"></i> Xử lý ngoại lệ: trễ tàu, sửa B/L, kiểm hóa</li>
+            <li><i class="bi bi-check-circle-fill"></i> 6–8 tuần · Kèm 1-1 · Cá nhân &amp; Chủ xưởng</li>
           </ul>
-          <a href="/dich-vu/dao-tao-xnk-thuc-chien-1-1/" class="why-card__link">
-            Tìm hiểu khóa đào tạo 1-1 <i class="bi bi-arrow-right"></i>
+          <a href="/dich-vu/dao-tao-xnk-1-1/" class="why-card__link">
+            Chi tiết đào tạo 1-1 <i class="bi bi-arrow-right"></i>
           </a>
         </div>
 
-        <!-- Cột 2: Tích hợp AI Business Integration -->
         <div class="why-card why-card--highlight">
           <div class="why-card__badge">
-            <i class="bi bi-cpu-fill"></i> AI Business Integration
+            <i class="bi bi-cpu-fill"></i> AI &amp; Bảo Mật Chứng Từ
           </div>
-          <h3 class="why-card__title">Tích Hợp AI Business Vào Quy Trình XNK</h3>
+          <h3 class="why-card__title">Đối Soát Chứng Từ Chéo Bằng AI An Toàn</h3>
           <p class="why-card__desc">
-            Giải pháp AI bảo mật doanh nghiệp, dữ liệu 100% trong hệ thống - chuẩn GDPR/EU với công nghệ Data Masking. Tự động hóa rà soát Hợp đồng ngoại thương, đối soát chứng từ và kiểm tra sự phù hợp điều khoản UCP 600 trong 60 giây mà không cần thay đổi phần mềm ERP sẵn có.
+            Chuyển giao bộ Prompt XNK (Zero Data Retention) và giải pháp Middleware Local AI tích hợp Data Masking tại máy trạm, giữ nguyên hệ thống ERP hiện tại.
           </p>
           <ul class="why-card__features">
-            <li><i class="bi bi-check-circle-fill"></i> Kiến trúc Local AI &amp; Data Masking bảo vệ bí mật kinh doanh</li>
-            <li><i class="bi bi-check-circle-fill"></i> Đối soát L/C MT700, Invoice, Packing List chỉ trong 60 giây</li>
-            <li><i class="bi bi-check-circle-fill"></i> Triển khai phương pháp Human-in-the-Loop kiểm soát chặt chẽ</li>
+            <li><i class="bi bi-check-circle-fill"></i> Che tên buyer, giá FOB/CIF qua Data Masking</li>
+            <li><i class="bi bi-check-circle-fill"></i> Phát hiện sai lệch theo UCP 600 &amp; ISBP 821</li>
+            <li><i class="bi bi-check-circle-fill"></i> 4–6 tuần · In-house · Phòng XNK &amp; Kế toán</li>
           </ul>
           <a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ung-dung-ai-xnk/" class="why-card__link">
             Khám phá giải pháp AI XNK <i class="bi bi-arrow-right"></i>
           </a>
         </div>
 
-        <!-- Cột 3: Cập nhật thủ tục hải quan & nghiệp vụ chuyên sâu -->
         <div class="why-card">
           <div class="why-card__badge">
-            <i class="bi bi-shield-check"></i> Pháp Lý &amp; Nghiệp Vụ Chuyên Sâu
+            <i class="bi bi-shield-check"></i> Pháp Lý &amp; Mã HS
           </div>
-          <h3 class="why-card__title">Cập Nhật Thủ Tục Hải Quan &amp; Nghiệp Vụ</h3>
+          <h3 class="why-card__title">Thẩm Định Mã HS &amp; Rào Cản FDA, BICON</h3>
           <p class="why-card__desc">
-            Đồng hành cùng Ban Pháp Lý &amp; Tuân Thủ Hải Quan MDA: Thẩm định mã HS nông sản chế biến/sấy thăng hoa, nắm bắt kịp thời các thông tư thuế cập nhật (85/2026/TT-BTC, 42/2026/TT-BCT, 110/2026/TT-BTC) và đáp ứng các rào cản kỹ thuật quốc tế khắt khe như FDA, BICON, SPS.
+            Áp dụng 6 quy tắc GRI và cập nhật các thông tư thuế mới (85/2026/TT-BTC, 42/2026/TT-BCT, 110/2026/TT-BTC) để phòng tránh truy thu thuế và kẹt hàng cảng đến.
           </p>
           <ul class="why-card__features">
-            <li><i class="bi bi-check-circle-fill"></i> Giải mã thông tư thuế 85/2026 &amp; thủ tục hải quan số NSW</li>
-            <li><i class="bi bi-check-circle-fill"></i> Thẩm định mã HS, phòng tránh rủi ro truy thu sau thông quan</li>
-            <li><i class="bi bi-check-circle-fill"></i> Hướng dẫn đáp ứng tiêu chuẩn kiểm dịch FDA, BICON, SPS</li>
+            <li><i class="bi bi-check-circle-fill"></i> Phân định mã HS nông sản tươi và chế biến</li>
+            <li><i class="bi bi-check-circle-fill"></i> Khai báo chuẩn FDA (Mỹ), BICON (Úc), SPS</li>
+            <li><i class="bi bi-check-circle-fill"></i> Thư viện tài liệu &amp; Checklist cập nhật</li>
           </ul>
           <a href="/blog/" class="why-card__link">
-            Xem cập nhật pháp lý XNK <i class="bi bi-arrow-right"></i>
+            Xem thư viện bài viết pháp lý <i class="bi bi-arrow-right"></i>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 3: CHUYÊN GIA ĐÀO TẠO XNK & AI MARKETING -->
+  <!-- SECTION 3: ĐỘI NGŨ CHUYÊN GIA & HỆ SINH THÁI DỊCH VỤ -->
   <section class="section section--soft">
     <div class="container">
       <div class="grid-2 expert-grid">
-        <!-- Cột Trái: Ảnh Đội ngũ & Floating Badge -->
         <div class="expert-visual">
           <div class="expert-image-box">
-            <img src="/media/nhung-linkedin-14-scaled.webp" alt="Đội ngũ Chuyên gia Đào tạo XNK & AI Marketing MDA" width="600" height="420" />
+            <img src="/media/nhung-linkedin-14-scaled.webp" alt="Ms Jen Phạm và đội ngũ cố vấn XNK nông sản MDA Hub" width="600" height="420" loading="lazy" />
             <div class="floating-badge">
               <i class="bi bi-shield-fill-check"></i>
               <div>
-                <strong>Đối Tác Tin Cậy</strong>
-                <span>Thị trường Úc, Canada, Mỹ, EU</span>
+                <strong>150+ Học Viên &amp; DN</strong>
+                <span>Thị trường Mỹ, Úc, Canada, EU</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Cột Phải: Nội Dung & Dịch Vụ Đào Tạo -->
         <div class="expert-content">
-          <span class="badge">Đội Ngũ Huấn Luyện Thực Chiến</span>
-          <h2 class="section-title">Chuyên Gia Đào Tạo XNK &amp; Chiến Lược AI Compliance</h2>
+          <span class="badge">Phân Vai Chuyên Gia Minh Bạch</span>
+          <h2 class="section-title">Hai chuyên gia dẫn dắt trực tiếp từng mảng nghiệp vụ và công nghệ</h2>
           <p class="lead">
-            Dưới sự dẫn dắt của <strong>Ms Jen Phạm</strong> cùng các cố vấn công nghệ &amp; pháp lý, MDA Hub đồng hành từ bước thẩm định tiềm năng đến chuẩn hóa vận hành qua 4 chương trình đào tạo mũi nhọn:
+            Không qua trợ giảng trung gian — mọi lộ trình đào tạo và tư vấn tại MDA Hub đều được phân tách trách nhiệm rõ ràng giữa pháp lý thực chiến và công nghệ AI:
           </p>
 
           <ul class="program-list">
             <li>
-              <div class="program-icon"><i class="bi bi-mortarboard-fill"></i></div>
+              <div class="program-icon"><i class="bi bi-person-check-fill"></i></div>
               <div>
-                <strong>Đào Tạo XNK Thực Chiến 1-1 (Ms Jen Phạm):</strong> Huấn luyện rà soát bộ chứng từ thật của chính doanh nghiệp bạn, rèn luyện kỹ năng xử lý rủi ro.
-              </div>
-            </li>
-            <li>
-              <div class="program-icon"><i class="bi bi-buildings-fill"></i></div>
-              <div>
-                <strong>Đào Tạo Chuyên Sâu Doanh Nghiệp (In-house):</strong> Chuẩn hóa quy trình xuất khẩu cho toàn bộ phòng ban kinh doanh, logistics &amp; xuất nhập khẩu.
+                <strong>Ms Jen Phạm (Pháp lý &amp; Nghiệp vụ XNK):</strong> Đồng sáng lập MD AGRI. Trực tiếp kèm 1-1 trên bộ chứng từ sống, xử lý L/C (UCP 600, ISBP 821), mã HS (6 quy tắc GRI) và kiểm dịch FDA/BICON/SPS.
               </div>
             </li>
             <li>
               <div class="program-icon"><i class="bi bi-cpu-fill"></i></div>
               <div>
-                <strong>Ứng Dụng AI Cho Doanh Nghiệp XNK:</strong> Tự động hóa rà soát hợp đồng ngoại thương và đối soát chứng từ trong 60 giây bằng Middleware Local AI bảo mật.
+                <strong>Mr. Tuệ Phạm (Công nghệ AI &amp; Vận hành):</strong> Đồng sáng lập MD AGRI. Phụ trách tư vấn doanh nghiệp (Hotline 0904.622.122), thiết kế luồng Middleware Local AI, Data Masking và chiến lược AI Marketing chuẩn GEO.
               </div>
             </li>
             <li>
-              <div class="program-icon"><i class="bi bi-globe-americas"></i></div>
+              <div class="program-icon"><i class="bi bi-buildings-fill"></i></div>
               <div>
-                <strong>AI Marketing Nông Sản Quốc Tế:</strong> Chiến lược Story Answering &amp; tối ưu GEO giúp thương hiệu được AI và nhà mua hàng quốc tế tin tưởng trích dẫn.
+                <strong>Đào tạo In-house theo ngành hàng:</strong> Chuẩn hóa SOP liên phòng ban (Mua hàng – Chứng từ – Logistics – Sales B2B) cho doanh nghiệp nông sản tươi, sấy thăng hoa và đông lạnh.
               </div>
             </li>
           </ul>
 
           <div class="expert-cta">
+            <a href="/gioi-thieu/" class="btn btn--outline" style="margin-right: 12px;">
+              Hồ Sơ Chuyên Gia &amp; Pháp Nhân
+            </a>
             <a href="/dich-vu/" class="btn btn--primary">
-              Nhận Tư Vấn Dịch Vụ Đào Tạo <i class="bi bi-arrow-right"></i>
+              So Sánh Các Gói Dịch Vụ <i class="bi bi-arrow-right"></i>
             </a>
           </div>
         </div>
@@ -244,65 +239,63 @@ const expertFaqs = [
     </div>
   </section>
 
-  <!-- SECTION 4: HỎI ĐÁP CHUYÊN SÂU & LỢI ÍCH HỢP TÁC (Chia 30% - 70%) -->
+  <!-- SECTION 4: QUY TRÌNH 30 NGÀY & GIẢI ĐÁP THỰC TẾ -->
   <section class="section section--white faq-section">
     <div class="container">
       <div class="faq-split-grid">
-        <!-- Cột Trái 30%: 4 Lợi Ích Cốt Lõi Khi Hợp Tác Cùng MDA Hub -->
         <div class="faq-col-left">
-          <span class="badge">Giải Đáp Thực Chiến</span>
-          <h2 class="section-title faq-col-left__title">Hợp Tác Cùng MDA</h2>
-          
-          <!-- 4 Lợi Ích Cốt Lõi (Dạng ft-sub-benefit Bỏ Border) -->
+          <span class="badge">Quy Trình Chuẩn B2B</span>
+          <h2 class="section-title faq-col-left__title">Lộ trình 4 bước từ chẩn đoán hồ sơ đến làm chủ quy trình</h2>
+
           <div class="core-benefits-wrapper">
             <h3 class="core-benefits__title">
-              <i class="bi bi-stars"></i> 4 Lợi Ích Cốt Lõi:
+              <i class="bi bi-diagram-3-fill"></i> Quy trình triển khai MDA:
             </h3>
             <div class="ft-sub-benefits-list">
               <div class="ft-sub-benefit-item">
                 <div class="ft-sub-benefit__icon">
-                  <i class="bi bi-file-earmark-check-fill"></i>
+                  <i class="bi bi-1-circle-fill"></i>
                 </div>
                 <div class="ft-sub-benefit__content">
-                  <h4 class="ft-sub-benefit__heading">Rà soát rủi ro trên hồ sơ doanh nghiệp</h4>
+                  <h4 class="ft-sub-benefit__heading">Chẩn đoán hồ sơ sống</h4>
                   <p class="ft-sub-benefit__desc">
-                    Đào tạo trực tiếp trên Invoice, Packing List, B/L, L/C thực tế; rèn phản xạ xử lý rủi ro ngoại lệ cảng đến.
+                    Khảo sát 30 ngày với doanh nghiệp hoặc kiểm tra 1 bộ chứng từ thật với cá nhân để xác định điểm nghẽn chi phí ẩn.
                   </p>
                 </div>
               </div>
 
               <div class="ft-sub-benefit-item">
                 <div class="ft-sub-benefit__icon">
-                  <i class="bi bi-shield-check"></i>
+                  <i class="bi bi-2-circle-fill"></i>
                 </div>
                 <div class="ft-sub-benefit__content">
-                  <h4 class="ft-sub-benefit__heading">Tối ưu thuế quan &amp; Bảo vệ mã HS</h4>
+                  <h4 class="ft-sub-benefit__heading">Thiết kế giáo trình &amp; SOP</h4>
                   <p class="ft-sub-benefit__desc">
-                    Khai thác triệt để ưu đãi FTA (CPTPP, EVFTA) và phòng ngừa truy thu thuế sau thông quan.
+                    May đo module theo đúng mã HS, điều kiện Incoterms 2020 và thị trường mục tiêu (Mỹ, Úc, Canada, EU).
                   </p>
                 </div>
               </div>
 
               <div class="ft-sub-benefit-item">
                 <div class="ft-sub-benefit__icon">
-                  <i class="bi bi-cpu-fill"></i>
+                  <i class="bi bi-3-circle-fill"></i>
                 </div>
                 <div class="ft-sub-benefit__content">
-                  <h4 class="ft-sub-benefit__heading">Tích hợp Local AI an toàn dữ liệu</h4>
+                  <h4 class="ft-sub-benefit__heading">Huấn luyện thực chiến &amp; AI</h4>
                   <p class="ft-sub-benefit__desc">
-                    Tự động hóa đối soát với cơ chế Data Masking, tuyệt đối không rò rỉ bí mật thương mại.
+                    Thực hành bóc tách chứng từ, viết Prompt 3 lớp kèm Data Masking và giữ nguyên tắc Human-in-the-Loop.
                   </p>
                 </div>
               </div>
 
               <div class="ft-sub-benefit-item">
                 <div class="ft-sub-benefit__icon">
-                  <i class="bi bi-person-check-fill"></i>
+                  <i class="bi bi-4-circle-fill"></i>
                 </div>
                 <div class="ft-sub-benefit__content">
-                  <h4 class="ft-sub-benefit__heading">Đồng hành chuyên gia 1-1</h4>
+                  <h4 class="ft-sub-benefit__heading">Đồng hành xử lý ngoại lệ</h4>
                   <p class="ft-sub-benefit__desc">
-                    Ms Jen Phạm và Hội đồng Pháp lý MDA trực tiếp tháo gỡ điểm nghẽn trong suốt hành trình thực thi.
+                    Hỗ trợ rà soát chéo khi phát sinh tình huống trễ tàu, tu chỉnh L/C hoặc kiểm tra sau thông quan.
                   </p>
                 </div>
               </div>
@@ -310,17 +303,16 @@ const expertFaqs = [
           </div>
         </div>
 
-        <!-- Cột Phải 70%: 5 Câu hỏi thực tế & Câu trả lời chuyên gia -->
         <div class="faq-col-right">
           <div class="faq-highlight-box">
             <i class="bi bi-patch-question-fill"></i>
             <p>
-              "MDA luôn khởi đầu bằng Giai đoạn Khảo sát & Đánh giá kéo dài 30 ngày. Trong giai đoạn này, chuyên gia MDA sẽ phỏng vấn trực tiếp các bộ phận (Mua hàng, Chứng từ, Logistics, Pháp chế) để lập bản đồ luồng công việc và nhận diện 2–3 'điểm nghẽn' gây lãng phí chi phí nhất. Sau đó, chúng tôi mới đề xuất giải pháp đào tạo In-house hoặc tích hợp Middleware Local AI với chỉ số KPI cam kết cụ thể, đảm bảo doanh nghiệp nhìn thấy hiệu quả hoàn vốn (ROI) rõ ràng trước khi mở rộng quy mô."
+              <strong>Nguyên tắc triển khai tại MDA Hub:</strong> Mọi dự án doanh nghiệp đều bắt đầu bằng giai đoạn khảo sát thực tế 30 ngày để chuẩn hóa dữ liệu và quy trình SOP trước khi đưa công cụ AI vào vận hành. Chi phí được báo giá may đo dựa trên độ phức tạp của hồ sơ sau khảo sát.
             </p>
           </div>
           <FaqAccordion
             items={expertFaqs}
-            title="5 Câu Hỏi Thực Tế & Góc Nhìn Tư Vấn Chuyên Gia"
+            title="5 Câu Hỏi Thường Gặp Từ Doanh Nghiệp Xuất Khẩu"
             renderSchema={true}
           />
         </div>
@@ -328,72 +320,17 @@ const expertFaqs = [
     </div>
   </section>
 
-  <!-- SECTION 5: GALLERY NỘI DUNG ĐÀO TẠO MẪU & TESTIMONIALS -->
+  <!-- SECTION 5: THƯ VIỆN TÀI LIỆU TẬP TRUNG & ĐÁNH GIÁ THỰC TẾ -->
   <TrainingGalleryPdf />
   <TestimonialSection />
 
-  <!-- SECTION 6: ĐỒNG HÀNH CÙNG BẠN (Full-Width Banner kết hợp Image & Google Form CTA) -->
+  <!-- SECTION 6: FORM TƯ VẤN NHÚNG TRỰC TIẾP TRÊN DOMAIN -->
   <section class="section section--gradient connect-section">
-    <div class="container">
-      <div class="grid-2 connect-grid">
-        <!-- Cột Trái: Thông tin liên hệ & Triết lý -->
-        <div class="connect-info">
-          <span class="badge badge--accent">Đồng Hành Cùng Bạn</span>
-          <h2 class="connect-title">
-            Kết Nối Cùng Chuyên Gia XNK &amp; AI MDA Hub
-          </h2>
-          <blockquote class="connect-quote">
-            "Xuất khẩu không chỉ là đưa hàng ra thế giới — đó là hành trình chiến lược từ thủ tục pháp lý minh bạch đến làm chủ công nghệ AI và thấu hiểu sâu sắc thị trường Úc, Canada, EU và Hoa Kỳ."
-          </blockquote>
-
-          <div class="connect-contact-details">
-            <p><i class="bi bi-geo-alt-fill"></i> <strong>Địa chỉ:</strong> Tầng 1, 53/104 Trần Khánh Dư, P. Tân Định, Quận 1, TP.HCM</p>
-            <p><i class="bi bi-telephone-fill"></i> <strong>Hotline Chuyên Môn:</strong> 0904.622.122 ( Mr. Tuệ Phạm)</p>
-            <p><i class="bi bi-envelope-fill"></i> <strong>Email:</strong> tue.pham@mekongdeltaagri.com</p>
-          </div>
-        </div>
-
-        <!-- Cột Phải: Hình ảnh + Nút Link Google Form -->
-        <div class="connect-action-side">
-          <div class="action-card">
-            <div class="action-card__image-wrap">
-              <img
-                src="/media/MDA-Hub-AI-Driven.webp"
-                alt="Đồng hành cùng Chuyên gia Xuất Nhập Khẩu MDA Hub"
-                width="800"
-                height="500"
-                loading="lazy"
-                class="action-card__img"
-              />
-              <div class="action-card__overlay">
-                <span class="action-card__pill"><i class="bi bi-shield-check"></i> Đào tạo Thực chiến &amp; Bảo mật Dữ liệu</span>
-              </div>
-            </div>
-
-            <div class="action-card__body">
-              <h3 class="action-card__title">Đăng Ký Tư Vấn &amp; Nhận Lộ Trình Đào Tạo May Đo</h3>
-              <p class="action-card__desc">
-                Hãy chia sẻ với chúng tôi về mặt hàng xuất khẩu, vướng mắc chứng từ hoặc định hướng ứng dụng AI của doanh nghiệp bạn. Chuyên gia <strong>Ms Jen Phạm</strong> và đội ngũ MDA Hub sẽ phản hồi giải pháp tối ưu trong 24 giờ.
-              </p>
-
-              <div class="action-card__btn-wrap">
-                <a
-                  href="https://forms.google.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn--secondary btn--lg action-card__btn"
-                >
-                  <i class="bi bi-clipboard2-check-fill"></i> Mở Biểu Mẫu Đăng Ký (Google Form)
-                </a>
-              </div>
-
-              <div class="action-card__trust">
-                <i class="bi bi-lock-fill"></i> Cam kết bảo mật 100% hồ sơ thương mại &amp; dữ liệu doanh nghiệp
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="container" style="max-width: 960px;">
+      <ContactForm
+        title="Nhận lộ trình đào tạo may đo — Phản hồi trong 24 giờ"
+        subtitle="Chia sẻ mặt hàng xuất khẩu hoặc vướng mắc chứng từ của bạn. Đội ngũ MD AGRI sẽ liên hệ tư vấn trực tiếp, không qua trung gian."
+      />
     </div>
   </section>
 </BaseLayout>

@@ -17,94 +17,137 @@ const subNavigation = [
   { name: 'AI Marketing', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ai-marketing/' },
 ];
 
-const bluf = "Chương trình huấn luyện Ứng Dụng AI Cho Doanh Nghiệp XNK chuyển giao trực tiếp bộ giải pháp tự động hóa quản trị chứng từ, đối soát hợp đồng ngoại thương và tra cứu quy định hải quan thế giới. Giúp doanh nghiệp cắt giảm 70% thời gian xử lý giấy tờ và loại trừ 99% lỗi sai sót thủ công trong hồ sơ xuất nhập khẩu.";
+const bluf = "Giải pháp Ứng dụng AI cho Doanh nghiệp XNK do Mr. Tuệ Phạm và Ban Pháp lý MD AGRI triển khai gồm hai cấp độ tách biệt: Đào tạo nhân sự dùng bộ 50+ Prompt XNK trên tài khoản Zero Data Retention, và tích hợp Middleware Local AI có Data Masking cục bộ để đối soát chứng từ mẫu trong 60 giây.";
 
 const courseSummary = {
-  format: "Huấn luyện In-house thực hành trên máy tính và dữ liệu công ty",
-  duration: "4 - 6 tuần (Gồm bộ 50+ Prompt AI chuyên dụng)",
-  instructor: "Ban Công nghệ AI & Ban Pháp lý Hải quan MDA Hub",
+  format: "Đào tạo Prompt In-house hoặc Khảo sát 30 ngày tích hợp Local AI",
+  duration: "4–6 tuần (Kèm bộ 50+ Prompt XNK & SOP kiểm duyệt)",
+  instructor: "Mr. Tuệ Phạm (Giải pháp AI) & Ms Jen Phạm (Pháp lý XNK)",
 };
 
 const faqs = [
   {
-    question: "Doanh nghiệp không có đội ngũ lập trình viên thì có ứng dụng AI được không?",
-    answer: "Hoàn toàn được. Chương trình tập trung vào Prompt Engineering và khai thác các mô hình LLMs sẵn có (ChatGPT Enterprise, Claude, Perplexity) thông qua giao diện trực quan, không đòi hỏi kỹ năng lập trình phức tạp."
+    question: "Sự khác nhau giữa khóa Đào tạo Prompt Engineering và dịch vụ tích hợp Middleware Local AI là gì?",
+    answer: "Đào tạo Prompt Engineering giúp nhân sự XNK không cần biết lập trình vẫn khai thác được ChatGPT Enterprise hoặc Claude (chế độ Zero Data Retention) bằng bộ 50+ câu lệnh chuẩn hóa. Còn Middleware Local AI là hệ thống phần mềm trung gian do đội ngũ Mr. Tuệ Phạm thiết kế riêng sau 30 ngày khảo sát, tự động che dữ liệu (Data Masking) tại máy trạm và kết nối qua API mà không ghi đè ERP cũ."
   },
   {
-    question: "Dữ liệu hợp đồng và giá bán của công ty có bị rò rỉ khi dùng AI không?",
-    answer: "MDA Hub hướng dẫn doanh nghiệp cấu hình môi trường bảo mật dữ liệu riêng (Enterprise Privacy Mode / Zero Data Retention), đảm bảo thông tin nội bộ của công ty không bị sử dụng để huấn luyện mô hình công cộng."
+    question: "Doanh nghiệp không có đội ngũ IT có tự vận hành được không?",
+    answer: "Với gói đào tạo Prompt XNK, nhân sự chứng từ thao tác hoàn toàn trên giao diện trực quan. Với gói Middleware Local AI, chúng tôi bàn giao quy trình vận hành đơn giản kèm hướng dẫn kiểm duyệt ngoại lệ (Human-in-the-Loop)."
+  },
+  {
+    question: "Dữ liệu giá FOB/CIF và danh sách khách hàng có bị lộ khi dùng AI không?",
+    answer: "MD AGRI nghiêm cấm tải trực tiếp chứng từ gốc lên tài khoản AI miễn phí công cộng. Toàn bộ dữ liệu nhạy cảm (tên buyer, đơn giá, số tài khoản) phải qua bước Data Masking cục bộ hoặc chạy trên Enterprise API có cam kết Zero Data Retention."
+  },
+  {
+    question: "AI có tự động ký duyệt tờ khai hải quan hoặc chốt bất hợp lệ L/C thay con người không?",
+    answer: "Tuyệt đối không. AI chỉ đóng vai trò rà soát chéo và gắn cờ cảnh báo (Red Flag); chuyên viên chứng từ và kế toán luôn là người kiểm tra biểu thuế gốc và ra quyết định cuối cùng."
   }
 ];
 ---
 
 <InsidePageLayout
-  title="Ứng Dụng AI Cho Doanh Nghiệp XNK Nông Sản | MDA Hub"
-  description="Khóa đào tạo tự động hóa nghiệp vụ chứng từ hải quan, đối soát hợp đồng ngoại thương và tra cứu quy chuẩn kỹ thuật FDA/BICON bằng trí tuệ nhân tạo AI."
-  badge="Chuyển Đổi Số Nông Nghiệp"
-  heroTitle="Ứng Dụng AI Cho Doanh Nghiệp Xuất Nhập Khẩu Nông Sản"
-  lead="Làm chủ các công cụ AI thế hệ mới để tự động hóa quy trình rà soát chứng từ, thẩm định biểu thuế và kiểm soát rủi ro pháp lý xuyên biên giới."
+  title="Ứng Dụng AI & Middleware Local AI Cho Doanh Nghiệp XNK | MDA Hub"
+  description="Phân tách rõ lộ trình đào tạo 50+ Prompt XNK (Zero Data Retention) và giải pháp Middleware Local AI có Data Masking đối soát chứng từ trong 60 giây."
+  badge="Công Nghệ AI & Bảo Mật XNK"
+  heroTitle="Ứng dụng AI và Middleware Local AI kiểm soát chứng từ XNK bảo mật"
+  lead="Giúp nhân sự chứng từ giảm thao tác đối chiếu thủ công nhưng vẫn khóa chặt bí mật giá FOB/CIF và giữ quyền phê duyệt cuối cùng ở con người."
+  heroImage="/media/MDA-Hub-AI-Driven.webp"
   breadcrumbs={breadcrumbs}
   subNavigation={subNavigation}
   blufText={bluf}
   courseSummary={courseSummary}
+  authorRole="tue-pham"
+  showAuthor={true}
+  showGallery={false}
+  showTestimonials={false}
+  showContactForm={true}
+  defaultService="ai-xnk"
 >
   <section>
-    <h2>1. Bài Toán Thực Trạng Của Phòng Chứng Từ XNK</h2>
-    <p>
-      Trong một lô hàng xuất khẩu trái cây hoặc nông sản chế biến, nhân sự XNK phải kiểm tra chéo hàng chục trường thông tin giữa Commercial Invoice, Packing List, Bill of Lading, Phytosanitary Certificate và Certificate of Origin. Một lỗi sai chính tả trong tên khoa học của quả hay một số liệu trọng lượng tịnh không khớp cũng có thể dẫn tới hậu quả hàng bị giữ tại cảng đích với chi phí phát sinh hàng nghìn USD.
-    </p>
-    <p>
-      Ứng dụng AI giúp giải phóng nhân sự khỏi các thao tác thủ công lặp đi lặp lại, đồng thời tạo ra một hệ thống phòng thủ kiểm tra hai lớp (Dual-Check) chuẩn xác tuyệt đối.
-    </p>
+    <h2>Những rủi ro bảo mật và sai sót khi doanh nghiệp tự ý dùng AI công cộng</h2>
+    <div style="overflow-x: auto; margin-block: 18px;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.92rem; text-align: left;">
+        <thead>
+          <tr style="background-color: var(--primary-deep); color: #ffffff;">
+            <th style="padding: 12px 16px;">Cách Làm Tự Phát (Rủi Ro Cao)</th>
+            <th style="padding: 12px 16px;">Cơ Chế Kiểm Soát Tại MD AGRI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--border-subtle);">
+            <td style="padding: 12px 16px;">Tải nguyên bản Invoice, L/C lên tài khoản ChatGPT miễn phí</td>
+            <td style="padding: 12px 16px;">Áp dụng Data Masking che giá FOB/CIF, tên đối tác hoặc dùng Enterprise API Zero Data Retention.</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle); background-color: #fafcf8;">
+            <td style="padding: 12px 16px;">Tin 100% mã HS do AI gợi ý mà không đối chiếu biểu thuế</td>
+            <td style="padding: 12px 16px;">Dùng Prompt 3 lớp yêu cầu trích dẫn 6 quy tắc GRI, sau đó chuyên viên kiểm chứng lại Thông tư gốc.</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle);">
+            <td style="padding: 12px 16px;">Mua phần mềm ERP mới đắt đỏ đè lên quy trình đang rối</td>
+            <td style="padding: 12px 16px;">Chuẩn hóa SOP 30 ngày, triển khai Middleware Local AI độc lập không ghi đè ERP cũ.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <section>
-    <h2>2. Bốn Khối Ứng Dụng AI Chuyển Giao Trong Khóa Học</h2>
+    <h2>Hai lộ trình ứng dụng AI tách biệt theo nhu cầu doanh nghiệp</h2>
     <div class="grid-2" style="margin-block: 24px;">
-      <div class="card card--tint">
-        <h3 style="font-size: 1.15rem; color: var(--primary-deep);"><i class="bi bi-file-earmark-diff-fill"></i> 1. Tự Động Đối Soát Chứng Từ Chéo</h3>
+      <div class="card card--tint" style="border-top: 4px solid var(--primary-dark);">
+        <h3 style="font-size: 1.15rem; color: var(--primary-deep);">
+          <i class="bi bi-chat-square-text-fill"></i> Cấp độ 1: Đào tạo Prompt XNK Thực chiến
+        </h3>
         <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
-          Dạy AI trích xuất và đối chiếu dữ liệu giữa Invoice, Packing List và Bill of Lading: Tự động phát hiện sai lệch về số lượng kiện, trọng lượng, số seal, số container trong vòng dưới 60 giây.
+          Dành cho đội ngũ non-tech sử dụng ChatGPT Enterprise hoặc Claude (Zero Data Retention). Bàn giao bộ 50+ Prompt chuyên ngành để rà soát Sales Contract, tra mã HS theo 6 quy tắc GRI và đối chiếu L/C theo UCP 600, ISBP 821.
         </p>
       </div>
 
-      <div class="card card--tint">
-        <h3 style="font-size: 1.15rem; color: var(--primary-deep);"><i class="bi bi-shield-lock-fill"></i> 2. Rà Soát Điều Khoản Hợp Đồng &amp; Incoterms</h3>
+      <div class="card card--tint" style="border-top: 4px solid var(--secondary);">
+        <h3 style="font-size: 1.15rem; color: var(--secondary);">
+          <i class="bi bi-hdd-network-fill"></i> Cấp độ 2: Tích hợp Middleware Local AI
+        </h3>
         <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
-          Phân tích các lỗ hổng pháp lý trong Sales Contract tiếng Anh: Cảnh báo điều khoản thanh toán bất lợi, rủi ro chuyển giao quyền sở hữu hàng hóa và mâu thuẫn trong điều kiện bồi thường.
-        </p>
-      </div>
-
-      <div class="card card--tint">
-        <h3 style="font-size: 1.15rem; color: var(--primary-deep);"><i class="bi bi-search"></i> 3. Trợ Lý AI Tra Cứu Quy Chuẩn Quốc Tế</h3>
-        <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
-          Thiết lập trợ lý AI nội bộ chuyên sâu về hệ thống BICON của Úc, cẩm nang FDA Mỹ và cơ sở dữ liệu SPS thế giới, giúp giải đáp điều kiện kiểm dịch của từng mặt hàng tức thì.
-        </p>
-      </div>
-
-      <div class="card card--tint">
-        <h3 style="font-size: 1.15rem; color: var(--primary-deep);"><i class="bi bi-translate"></i> 4. Dịch Thuật Pháp Lý &amp; Soạn Thảo Hồ Sơ Kỹ Thuật</h3>
-        <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
-          Dịch thuật chuẩn xác các báo cáo kiểm nghiệm chất lượng (COA), bảng thông số kỹ thuật (TDS) và hồ sơ cơ sở sản xuất sang tiếng Anh chuyên ngành hải quan quốc tế.
+          Triển khai sau giai đoạn khảo sát 30 ngày với dữ liệu đầu vào đạt chuẩn (PDF sạch). Hệ thống tự động Data Masking tại máy trạm và đối soát chéo Invoice – Packing List – B/L trong 60 giây trước khi đẩy vào bảng theo dõi.
         </p>
       </div>
     </div>
   </section>
 
   <section>
-    <h2>3. Bộ 50+ Prompt AI Chuyên Dụng Tặng Kèm Khóa Học</h2>
-    <p>
-      Doanh nghiệp tham gia chương trình được sở hữu trọn bộ thư viện câu lệnh AI thực chiến độc quyền của MDA Hub, được tối ưu riêng cho ngành nông sản Việt Nam:
-    </p>
-    <ul>
-      <li><strong>Nhóm Prompt Thẩm định:</strong> Đối soát bộ chứng từ xuất khẩu trái cây tươi và đông lạnh.</li>
-      <li><strong>Nhóm Prompt Tra cứu:</strong> Xác định ranh giới mã HS theo 6 quy tắc GIR và Thông tư 85/2026/TT-BTC.</li>
-      <li><strong>Nhóm Prompt Đàm phán:</strong> Phản hồi thư hỏi hàng (Inquiry) và thư đàm phán khiếu nại (Claim) của đối tác nước ngoài.</li>
-    </ul>
+    <h2>Bốn năng lực nghiệp vụ được chuẩn hóa trong chương trình</h2>
+    <div class="grid-2" style="margin-block: 20px;">
+      <div class="card card--tint">
+        <h3 style="font-size: 1.05rem; color: var(--primary-deep);"><i class="bi bi-file-earmark-diff-fill"></i> Gắn cờ sai lệch chứng từ chéo</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+          Phát hiện chênh lệch số kiện, trọng lượng, số seal, số container giữa Invoice, Packing List và B/L để nhân sự duyệt tay.
+        </p>
+      </div>
+
+      <div class="card card--tint">
+        <h3 style="font-size: 1.05rem; color: var(--primary-deep);"><i class="bi bi-shield-lock-fill"></i> Rà soát điều khoản hợp đồng</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+          Kiểm tra xung đột giữa điều kiện Incoterms 2020 với điều khoản thanh toán L/C (Field 46A/47A) và giới hạn bồi thường.
+        </p>
+      </div>
+
+      <div class="card card--tint">
+        <h3 style="font-size: 1.05rem; color: var(--primary-deep);"><i class="bi bi-search"></i> Tra cứu FDA, BICON &amp; Biểu thuế</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+          Tổng hợp nhanh yêu cầu kiểm dịch và đối chiếu Thông tư 85/2026/TT-BTC, 42/2026/TT-BCT kèm link văn bản gốc.
+        </p>
+      </div>
+
+      <div class="card card--tint">
+        <h3 style="font-size: 1.05rem; color: var(--primary-deep);"><i class="bi bi-translate"></i> Dịch thuật &amp; Soạn hồ sơ kỹ thuật</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+          Chuẩn hóa tiếng Anh chuyên ngành cho báo cáo kiểm nghiệm (COA), thông số kỹ thuật (TDS) và thư phản hồi khiếu nại.
+        </p>
+      </div>
+    </div>
   </section>
 
   <section>
-    <FaqAccordion items={faqs} title="Câu Hỏi Thường Gặp Về Ứng Dụng AI XNK" />
+    <FaqAccordion items={faqs} title="Câu Hỏi Thường Gặp Về Ứng Dụng AI XNK" renderSchema={true} />
   </section>
 </InsidePageLayout>
-
