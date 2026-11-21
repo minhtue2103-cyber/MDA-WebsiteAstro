@@ -4,7 +4,7 @@ description: Trước khi dùng AI xử lý chứng từ thay một phần ERP, 
 publishDate: 2026-11-13
 updatedDate: 2026-11-18
 category: Ứng Dụng AI Trong XNK
-headlinePhoto: /media/18244.webp
+headlinePhoto: /media/mda-xnk-ai-2.webp
 headlinePhotoAlt: "Hình ảnh minh họa cho bài viết: Ba chốt chặn dữ liệu và bảo mật SME phải khóa trước khi dùng AI"
 headlinePhotoCaption: Chuyên mục Ứng Dụng AI Trong XNK — MDA Agro-Export Hub
 author: Ms Jen Phạm (Nhung Phạm)

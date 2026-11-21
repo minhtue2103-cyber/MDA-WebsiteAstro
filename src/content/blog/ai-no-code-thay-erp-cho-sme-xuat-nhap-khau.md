@@ -3,7 +3,7 @@ title: Dùng AI và No Code thay thế ERP đắt tiền cho SME xuất nhập k
 description: Doanh nghiệp SME XNK có thể dùng n8n + AI OCR + Google Sheets (15–50 USD/tháng) thay ERP 500tr–2 tỷ, giảm 60% phí hóa đơn, kèm Data Masking bảo mật.
 publishDate: 2026-11-13
 category: Ứng Dụng AI Trong XNK
-headlinePhoto: /media/MDA-Hub-AI-Driven.webp
+headlinePhoto: /media/mda-xnk-ai-1.webp
 headlinePhotoAlt: "Hình ảnh minh họa cho bài viết: Dùng AI và No Code thay thế ERP đắt tiền cho SME xuất nhập khẩu"
 headlinePhotoCaption: Chuyên mục Ứng Dụng AI Trong XNK — MDA Agro-Export Hub
 author: Tuệ Phạm (Mr. Tuệ)

@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = "Nhận lộ trình đào tạo may đo — Phản hồi trong 24 giờ",
-  subtitle = "Để lại thông tin ngắn gọn ngay dưới đây. Mr. Tuệ Phạm (Phụ trách Giải pháp AI & Tiếp nhận tư vấn) và Ms Jen Phạm (Phụ trách Chứng từ & Pháp lý XNK) sẽ xem trước bài toán của bạn.",
+  title = "Nhận lộ trình đào tạo — Phản hồi trong 24 giờ",
+  subtitle = "Vui lòng gửi yêu cầu của bạn ",
   defaultService = "",
   extendedMode = false,
 } = Astro.props;
@@ -21,7 +21,7 @@ const {
       <div class="visual-inner">
         <img
           src="/media/profile-jen-pham.webp"
-          alt="Ms Jen Phạm - Chuyên gia Chiến lược XNK MDA Hub"
+          alt="Ms Jen Phạm - Chuyên gia XNK"
           class="expert-avatar"
           width="100"
           height="100"
@@ -29,7 +29,7 @@ const {
         />
         <div class="visual-text">
           <span class="expert-name">Ms Jen Phạm &amp; Mr. Tuệ Phạm</span>
-          <span class="expert-title">Hội đồng Cố vấn Thực chiến · MD AGRI</span>
+          <span class="expert-title">Cố vấn AI Thực chiến · MD AGRI</span>
         </div>
 
         <div class="consult-scope">
@@ -46,7 +46,6 @@ const {
 
     <!-- Right Column: Form nhúng trực tiếp trên mekongdeltaagri.com -->
     <div class="contact-content">
-      <span class="badge badge--accent">Tư Vấn Trực Tiếp Trên Domain</span>
       <h3 class="contact-title">{title}</h3>
       <p class="contact-desc">{subtitle}</p>
 

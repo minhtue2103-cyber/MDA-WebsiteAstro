@@ -1,11 +1,9 @@
 ---
 title: Rủi ro rò rỉ dữ liệu khi nhân viên XNK tự ý upload chứng từ lên AI
-description: Nhân viên XNK tải hợp đồng, tờ khai lên AI công cộng có thể bị phạt tới
-  5% doanh thu theo Luật 91/2025/QH15 và mất bảo hộ bí mật kinh doanh.
-publishDate: '2026-11-16'
-headlinePhoto: /media/MDA-Hub-AI-Driven.webp
-headlinePhotoAlt: 'Hình ảnh minh họa cho bài viết: Rủi ro rò rỉ dữ liệu khi nhân viên
-  XNK tự ý upload chứng từ lên AI'
+description: Nhân viên XNK tải hợp đồng, tờ khai lên AI công cộng có thể bị phạt tới 5% doanh thu theo Luật 91/2025/QH15 và mất bảo hộ bí mật kinh doanh.
+publishDate: 2026-11-16
+headlinePhoto: /media/mda-xnk-ai-5.webp
+headlinePhotoAlt: "Hình ảnh minh họa cho bài viết: Rủi ro rò rỉ dữ liệu khi nhân viên XNK tự ý upload chứng từ lên AI"
 headlinePhotoCaption: Chuyên mục Chứng Từ & Pháp Lý XNK — MDA Agro-Export Hub
 author: Ban Pháp Lý & Tuân Thủ Hải Quan MDA
 featured: true

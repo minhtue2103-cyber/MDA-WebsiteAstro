@@ -1,12 +1,9 @@
 ---
 title: Công nghệ sấy thăng hoa Việt Nam đáp ứng chuẩn Clean Label Canada Úc
-description: Các nhà máy chế biến Việt Nam dùng sấy thăng hoa giữ 98% dưỡng chất,
-  điều chỉnh Brix cơ học không đường hóa học, đạt chuẩn BRCGS, IFS Food vào Canada
-  và Úc.
-publishDate: '2026-11-13'
-headlinePhoto: /media/MDA-Hub-AI-Driven.webp
-headlinePhotoAlt: 'Hình ảnh minh họa cho bài viết: Công nghệ sấy thăng hoa Việt Nam
-  đáp ứng chuẩn Clean Label Canada Úc'
+description: Các nhà máy chế biến Việt Nam dùng sấy thăng hoa giữ 98% dưỡng chất, điều chỉnh Brix cơ học không đường hóa học, đạt chuẩn BRCGS, IFS Food vào Canada và Úc.
+publishDate: 2026-11-13
+headlinePhoto: /media/mda-xnk-ai-4.webp
+headlinePhotoAlt: "Hình ảnh minh họa cho bài viết: Công nghệ sấy thăng hoa Việt Nam đáp ứng chuẩn Clean Label Canada Úc"
 headlinePhotoCaption: Chuyên mục Chứng Từ & Pháp Lý XNK — MDA Agro-Export Hub
 author: Ban Pháp Lý & Tuân Thủ Hải Quan MDA
 featured: true

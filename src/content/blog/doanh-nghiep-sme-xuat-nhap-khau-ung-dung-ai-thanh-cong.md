@@ -3,7 +3,7 @@ title: Cách doanh nghiệp SME xuất nhập khẩu ứng dụng AI thành côn
 description: SME xuất nhập khẩu ứng dụng AI thành công cần làm sạch dữ liệu 3 cấp độ, neo AI vào tài liệu pháp lý chuẩn (I.P.O, P.C.V, A.I.M) và giữ Human-in-the-Loop.
 publishDate: 2026-11-13
 category: Ứng Dụng AI Trong XNK
-headlinePhoto: /media/nhung-linkedin-12.webp
+headlinePhoto: /media/mda-xnk-ai-3.webp
 headlinePhotoAlt: "Hình ảnh minh họa cho bài viết: Cách doanh nghiệp SME xuất nhập khẩu ứng dụng AI thành công"
 headlinePhotoCaption: Chuyên mục Ứng Dụng AI Trong XNK — MDA Agro-Export Hub
 author: Tuệ Phạm (Mr. Tuệ)
