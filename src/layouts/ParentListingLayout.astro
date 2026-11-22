@@ -217,7 +217,7 @@ const breadcrumbSchema = {
   function setupCategoryFiltering() {
     const buttons = document.querySelectorAll('.category-filter-btn');
     const searchInput = document.getElementById('instantSearchInput') as HTMLInputElement | null;
-    const cards = document.querySelectorAll('[data-category]');
+    const cards = document.querySelectorAll('article[data-category]');
 
     if (!buttons.length && !searchInput) return;
 

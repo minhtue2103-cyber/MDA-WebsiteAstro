@@ -1,10 +1,24 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import TestimonialSection from '../components/shared/TestimonialSection.astro';
 import TrainingGalleryPdf from '../components/shared/TrainingGalleryPdf.astro';
-import ContactForm from '../components/shared/ContactForm.astro';
 import FaqAccordion from '../components/ui/FaqAccordion.astro';
 import HeroWave from '../components/ui/HeroWave.astro';
+
+const latestNews = (await getCollection('news'))
+  .sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime())
+  .slice(0, 3);
+
+const latestBlogs = (await getCollection('blog'))
+  .sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime())
+  .slice(0, 3);
+
+function truncateText(text: string, maxLen = 250): string {
+  const clean = (text || '').trim();
+  if (clean.length <= maxLen) return clean;
+  return clean.slice(0, maxLen).trimEnd() + '...';
+}
 
 const heroSlides = [
   {
@@ -65,7 +79,7 @@ const expertFaqs = [
           <strong>MDA Hub</strong> đào tạo nghiệp vụ xuất nhập khẩu trên bộ chứng từ và chuyển giao giải pháp AI bảo mật cho doanh nghiệp nông sản Việt Nam. Dưới sự dẫn dắt của <strong>Ms Jen Phạm</strong> (Pháp lý &amp; Nghiệp vụ) và <strong>Mr. Tuệ Phạm</strong> (Công nghệ AI &amp; Vận hành), doanh nghiệp tự chủ xuất khẩu sang Mỹ, Úc, Canada và EU.
         </p>
         <div class="hero-cta-group">
-          <a href="#contact-form-block" class="btn btn--secondary">
+          <a href="/dang-ky-thu-khoa-hoc/" class="btn btn--secondary">
             <i class="bi bi-clipboard2-check"></i> Nhận Tư Vấn Lộ Trình
           </a>
           <a href="/dich-vu/" class="btn btn--outline">
@@ -324,16 +338,243 @@ const expertFaqs = [
   <TrainingGalleryPdf />
   <TestimonialSection />
 
-  <!-- SECTION 6: FORM TƯ VẤN NHÚNG TRỰC TIẾP TRÊN DOMAIN -->
-  <section class="section section--gradient connect-section">
-    <div class="container" style="max-width: 960px;">
-      <ContactForm
-        title="Nhận lộ trình đào tạo — Phản hồi trong 24 giờ"
-        subtitle="Chia sẻ mặt hàng xuất khẩu hoặc vướng mắc chứng từ của bạn. Đội ngũ MD AGRI sẽ liên hệ tư vấn trực tiếp, không qua trung gian."
-      />
+  <!-- SECTION 6: TIN TỨC & BLOG MỚI NHẤT (100% width PC: 50% News / 50% Blog) -->
+  <section class="section section--soft home-editorial-section">
+    <div class="home-editorial-container">
+      <div class="section-header text-center" style="margin-bottom: 40px;">
+        <span class="badge">Cập Nhật Tri Thức &amp; Pháp Lý</span>
+        <h2 class="section-title">Tin Tức Hải Quan &amp; Blog Thực Chiến Mới Nhất</h2>
+        <p class="lead">
+          Theo dõi các thông tư thuế, rào cản kiểm dịch và hướng dẫn ứng dụng AI mới nhất từ đội ngũ chuyên gia MD AGRI.
+        </p>
+      </div>
+
+      <div class="home-editorial-grid">
+        <!-- Cột Trái (50%): Top 3 Tin tức mới nhất -->
+        <div class="editorial-column">
+          <div class="editorial-column__header">
+            <h3><i class="bi bi-newspaper"></i> Tin Tức &amp; Hải Quan Mới Nhất</h3>
+            <a href="/tin-tuc/" class="editorial-view-all">Xem tất cả Tin tức &rarr;</a>
+          </div>
+
+          <div class="editorial-list">
+            {latestNews.map((item) => (
+              <article class="editorial-card">
+                <a href={`/tin-tuc/${item.slug}/`} class="editorial-card__thumb" tabindex="-1" aria-hidden="true">
+                  <img
+                    src={item.data.headlinePhoto}
+                    alt={item.data.headlinePhotoAlt || item.data.title}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
+                <div class="editorial-card__body">
+                  <h4 class="editorial-card__title">
+                    <a href={`/tin-tuc/${item.slug}/`}>{item.data.title}</a>
+                  </h4>
+                  <p class="editorial-card__excerpt">{truncateText(item.data.description, 250)}</p>
+                  <a href={`/tin-tuc/${item.slug}/`} class="editorial-card__link">
+                    Đọc toàn bộ bản tin <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div class="editorial-column__footer">
+            <a href="/tin-tuc/" class="btn btn--outline">
+              Khám phá chuyên mục Tin tức <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cột Phải (50%): Top 3 Blog mới nhất -->
+        <div class="editorial-column">
+          <div class="editorial-column__header">
+            <h3><i class="bi bi-journal-bookmark-fill"></i> Blog Tri Thức XNK &amp; AI</h3>
+            <a href="/blog/" class="editorial-view-all">Xem tất cả Blog &rarr;</a>
+          </div>
+
+          <div class="editorial-list">
+            {latestBlogs.map((item) => (
+              <article class="editorial-card">
+                <a href={`/blog/${item.slug}/`} class="editorial-card__thumb" tabindex="-1" aria-hidden="true">
+                  <img
+                    src={item.data.headlinePhoto}
+                    alt={item.data.headlinePhotoAlt || item.data.title}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
+                <div class="editorial-card__body">
+                  <h4 class="editorial-card__title">
+                    <a href={`/blog/${item.slug}/`}>{item.data.title}</a>
+                  </h4>
+                  <p class="editorial-card__excerpt">{truncateText(item.data.description, 250)}</p>
+                  <a href={`/blog/${item.slug}/`} class="editorial-card__link">
+                    Đọc cẩm nang <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div class="editorial-column__footer">
+            <a href="/blog/" class="btn btn--primary">
+              Khám phá chuyên mục Blog <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  /* =====================================================================
+     SECTION 6: TIN TỨC & BLOG MỚI NHẤT (100% Width PC, 50/50 Split)
+     ===================================================================== */
+  .home-editorial-container {
+    width: 100%;
+    padding-inline: clamp(16px, 3vw, 48px);
+    box-sizing: border-box;
+  }
+
+  .home-editorial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .editorial-column {
+    background: #ffffff;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--card-radius);
+    padding: 28px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .editorial-column__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--primary-50);
+  }
+
+  .editorial-column__header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--primary-deep);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .editorial-view-all {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    white-space: nowrap;
+  }
+
+  .editorial-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .editorial-card {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 16px;
+    align-items: start;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .editorial-card:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .editorial-card__thumb {
+    display: block;
+    aspect-ratio: 16 / 10;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--primary-50);
+  }
+
+  .editorial-card__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .editorial-card__title {
+    margin: 0 0 6px;
+    font-size: 1.02rem;
+    line-height: 1.4;
+  }
+
+  .editorial-card__title a {
+    color: var(--primary-deep);
+  }
+
+  .editorial-card__title a:hover {
+    color: var(--primary-dark);
+  }
+
+  .editorial-card__excerpt {
+    margin: 0 0 8px;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  .editorial-card__link {
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: #c2410c;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .editorial-column__footer {
+    margin-top: 22px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--border-subtle);
+  }
+
+  @media (max-width: 992px) {
+    .home-editorial-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .editorial-column {
+      padding: 20px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .editorial-column__header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .editorial-card {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+  }
+</style>
 
 <style>
   /* =====================================================================
