@@ -7,11 +7,15 @@ interface Props {
 }
 
 const {
-  title = "Nhận lộ trình đào tạo — Phản hồi trong 24 giờ",
-  subtitle = "Vui lòng gửi yêu cầu của bạn ",
+  title = "Nhận lộ trình đào tạo may đo — Phản hồi trong 24 giờ",
+  subtitle = "Để lại thông tin ngắn gọn ngay dưới đây. Mr. Tuệ Phạm (Phụ trách Giải pháp AI & Tiếp nhận tư vấn) và Ms Jen Phạm (Phụ trách Chứng từ & Pháp lý XNK) sẽ xem trước bài toán của bạn.",
   defaultService = "",
   extendedMode = false,
 } = Astro.props;
+
+const contactApiUrl =
+  import.meta.env.PUBLIC_CONTACT_API_URL || "https://api.mekongdeltaagri.com/contact";
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || "";
 ---
 
 <div class="contact-cta-card" id="contact-form-block">
@@ -21,64 +25,102 @@ const {
       <div class="visual-inner">
         <img
           src="/media/profile-jen-pham.webp"
-          alt="Ms Jen Phạm - Chuyên gia XNK"
+          alt="Ms Jen Phạm - Chuyên gia Chiến lược XNK MDA Hub"
           class="expert-avatar"
           width="100"
           height="100"
           loading="lazy"
         />
         <div class="visual-text">
-          <span class="expert-name">Ms Jen Phạm</span>
+          <span class="expert-name">Ms Jen Phạm &amp; Mr. Tuệ Phạm</span>
+          <span class="expert-title">Hội đồng Cố vấn Thực chiến · MD AGRI</span>
         </div>
 
+        <div class="consult-scope">
+          <strong class="consult-scope__title">Nội dung buổi tư vấn bao gồm:</strong>
+          <ul class="consult-scope__list">
+            <li><i class="bi bi-check2"></i> Rà soát nhanh 1 bộ chứng từ hoặc mã HS đang vướng</li>
+            <li><i class="bi bi-check2"></i> Chỉ ra 2–3 điểm nghẽn gây chi phí ẩn tại cảng đến</li>
+            <li><i class="bi bi-check2"></i> Phân định rõ nhu cầu: Học 1-1, In-house hay Local AI</li>
+            <li><i class="bi bi-check2"></i> Đề xuất lộ trình &amp; ngân sách phù hợp quy mô</li>
+          </ul>
+        </div>
       </div>
     </div>
 
-    <!-- Right Column: Form nhúng trực tiếp trên mekongdeltaagri.com -->
+    <!-- Right Column: Form nhúng trực tiếp gửi qua Cloudflare Worker + Turnstile -->
     <div class="contact-content">
+      <span class="badge badge--accent">Tư Vấn Trực Tiếp Trên Domain</span>
       <h3 class="contact-title">{title}</h3>
       <p class="contact-desc">{subtitle}</p>
 
-      <form class="mda-inline-form" data-mda-contact-form>
+      <form
+        class="mda-inline-form"
+        data-mda-contact-form
+        data-api-url={contactApiUrl}
+        data-has-turnstile={turnstileSiteKey ? "true" : "false"}
+      >
+        <!-- Honeypot chống bot (ẩn bằng CSS) -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="mda-website-url">Website</label>
+          <input id="mda-website-url" name="website_url" type="text" tabindex="-1" autocomplete="off" />
+        </div>
+
         <div class="form-row-2">
           <div class="form-field">
             <label for="mda-name">Họ và tên <span class="req">*</span></label>
-            <input id="mda-name" name="name" type="text" required placeholder="VD: Nguyễn Văn A" />
+            <input id="mda-name" name="full_name" type="text" required placeholder="VD: Nguyễn Văn A" />
           </div>
           <div class="form-field">
-            <label for="mda-phone">Số điện thoại / Zalo <span class="req">*</span></label>
-            <input id="mda-phone" name="phone" type="tel" required placeholder="VD: 090x.xxx.xxx" />
+            <label for="mda-email">Email liên hệ <span class="req">*</span></label>
+            <input id="mda-email" name="email" type="email" required placeholder="VD: contact@congty.com" />
           </div>
         </div>
 
         <div class="form-row-2">
+          <div class="form-field">
+            <label for="mda-phone">Số điện thoại / Zalo</label>
+            <input id="mda-phone" name="phone" type="tel" placeholder="VD: 090x.xxx.xxx" />
+          </div>
           <div class="form-field">
             <label for="mda-company">Công ty / Mặt hàng xuất khẩu</label>
             <input id="mda-company" name="company" type="text" placeholder="VD: Trái cây sấy / Logistics" />
           </div>
-          <div class="form-field">
-            <label for="mda-service">Nhu cầu tư vấn <span class="req">*</span></label>
-            <select id="mda-service" name="service" required>
-              <option value="" selected={defaultService === ""}>-- Chọn lộ trình quan tâm --</option>
-              <option value="Đào tạo XNK Thực chiến 1-1" selected={defaultService === "1-1"}>Đào tạo XNK Thực chiến 1-1 (Ms Jen Phạm)</option>
-              <option value="Đào tạo In-house Doanh nghiệp" selected={defaultService === "inhouse"}>Đào tạo Chuyên sâu Doanh nghiệp (In-house)</option>
-              <option value="Ứng dụng AI & Prompt XNK" selected={defaultService === "ai-xnk"}>Ứng dụng AI &amp; Middleware Local AI cho XNK</option>
-              <option value="AI Marketing & Tối ưu GEO B2B" selected={defaultService === "ai-marketing"}>AI Marketing Nông sản Quốc tế (GEO)</option>
-              <option value="Đăng ký buổi đánh giá năng lực 45 phút" selected={defaultService === "trial"}>Buổi đánh giá năng lực 45 phút miễn phí</option>
-            </select>
-          </div>
         </div>
 
-        {extendedMode && (
-          <div class="form-field">
-            <label for="mda-note">Vướng mắc chứng từ hoặc mục tiêu cụ thể</label>
-            <textarea id="mda-note" name="note" rows="2" placeholder="VD: Cần rà soát mã HS hàng sấy thăng hoa hoặc chuẩn hóa quy trình L/C MT700..."></textarea>
+        <div class="form-field">
+          <label for="mda-service">Nhu cầu tư vấn <span class="req">*</span></label>
+          <select id="mda-service" name="service" required>
+            <option value="" selected={defaultService === ""}>-- Chọn lộ trình quan tâm --</option>
+            <option value="Đào tạo XNK Thực chiến 1-1" selected={defaultService === "1-1"}>Đào tạo XNK Thực chiến 1-1 (Ms Jen Phạm)</option>
+            <option value="Đào tạo In-house Doanh nghiệp" selected={defaultService === "inhouse"}>Đào tạo Chuyên sâu Doanh nghiệp (In-house)</option>
+            <option value="Ứng dụng AI & Prompt XNK" selected={defaultService === "ai-xnk"}>Ứng dụng AI &amp; Middleware Local AI cho XNK</option>
+            <option value="AI Marketing & Tối ưu GEO B2B" selected={defaultService === "ai-marketing"}>AI Marketing Nông sản Quốc tế (GEO)</option>
+            <option value="Đăng ký buổi đánh giá năng lực 45 phút" selected={defaultService === "trial"}>Buổi đánh giá năng lực 45 phút miễn phí</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="mda-message">
+            Vướng mắc chứng từ hoặc nội dung cần tư vấn {extendedMode ? <span class="req">*</span> : ""}
+          </label>
+          <textarea
+            id="mda-message"
+            name="message"
+            rows={extendedMode ? 3 : 2}
+            placeholder="VD: Cần rà soát mã HS hàng sấy thăng hoa hoặc chuẩn hóa quy trình L/C MT700..."
+          ></textarea>
+        </div>
+
+        {turnstileSiteKey && (
+          <div class="turnstile-wrap">
+            <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="light"></div>
           </div>
         )}
 
         <button type="submit" class="btn btn--secondary btn-form-cta">
           <i class="bi bi-send-check-fill"></i>
-          <span>Gửi Yêu Cầu Tư Vấn Ngay</span>
+          <span data-btn-label>Gửi Yêu Cầu Tư Vấn Ngay</span>
         </button>
 
         <span class="form-hint">
@@ -109,42 +151,90 @@ const {
   </div>
 </div>
 
+{turnstileSiteKey && (
+  <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+)}
+
 <script>
   document.querySelectorAll('[data-mda-contact-form]').forEach((form) => {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const formEl = e.currentTarget as HTMLFormElement;
-      const data = new FormData(formEl);
-      const name = String(data.get('name') || '').trim();
-      const phone = String(data.get('phone') || '').trim();
-      const company = String(data.get('company') || 'Chưa cung cấp').trim();
-      const service = String(data.get('service') || '').trim();
-      const note = String(data.get('note') || '').trim();
-
+      const apiUrl = formEl.dataset.apiUrl || '';
+      const hasTurnstile = formEl.dataset.hasTurnstile === 'true';
       const feedback = formEl.querySelector('.form-feedback') as HTMLElement | null;
-      if (!name || !phone || !service) {
-        if (feedback) {
-          feedback.hidden = false;
-          feedback.className = 'form-feedback form-feedback--error';
-          feedback.textContent = 'Vui lòng điền đầy đủ Họ tên, SĐT/Zalo và Nhu cầu tư vấn.';
-        }
+      const submitBtn = formEl.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+      const btnLabel = formEl.querySelector('[data-btn-label]') as HTMLElement | null;
+
+      const data = new FormData(formEl);
+      const full_name = String(data.get('full_name') || '').trim();
+      const email = String(data.get('email') || '').trim();
+      const phone = String(data.get('phone') || '').trim();
+      const company = String(data.get('company') || '').trim();
+      const service = String(data.get('service') || '').trim();
+      const note = String(data.get('message') || '').trim();
+      const website_url = String(data.get('website_url') || '').trim();
+      const turnstileToken = String(data.get('cf-turnstile-response') || '').trim();
+
+      const message = note ? `[${service}] ${note}` : `[${service}] Yêu cầu tư vấn lộ trình`;
+
+      const showFeedback = (kind: 'success' | 'error', html: string) => {
+        if (!feedback) return;
+        feedback.hidden = false;
+        feedback.className = `form-feedback form-feedback--${kind}`;
+        feedback.innerHTML = html;
+      };
+
+      if (!full_name || !email || !service) {
+        showFeedback('error', 'Vui lòng điền đầy đủ Họ tên, Email và Nhu cầu tư vấn.');
         return;
       }
 
-      const subject = encodeURIComponent(`[MDA Hub] Yêu cầu tư vấn: ${service} - ${name}`);
-      const body = encodeURIComponent(
-        `Họ tên: ${name}\nSĐT/Zalo: ${phone}\nCông ty / Mặt hàng: ${company}\nNhu cầu: ${service}\nGhi chú: ${note || 'Không có'}`
-      );
-
-      if (feedback) {
-        feedback.hidden = false;
-        feedback.className = 'form-feedback form-feedback--success';
-        feedback.innerHTML =
-          `Đã ghi nhận thông tin của <strong>${name}</strong>. Bạn có thể ` +
-          `<a href="mailto:tue.pham@mekongdeltaagri.com?subject=${subject}&body=${body}" style="text-decoration:underline;font-weight:700;">gửi nhanh qua Email</a> ` +
-          `hoặc nhắn trực tiếp <a href="https://zalo.me/0904622122" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;font-weight:700;">Zalo 0904.622.122</a> để được phản hồi ngay trong 24 giờ.`;
+      if (hasTurnstile && !turnstileToken) {
+        showFeedback('error', 'Vui lòng hoàn tất xác thực bảo mật trước khi gửi.');
+        return;
       }
-      formEl.reset();
+
+      if (submitBtn) submitBtn.disabled = true;
+      if (btnLabel) btnLabel.textContent = 'Đang gửi yêu cầu...';
+
+      try {
+        const res = await fetch(apiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            full_name,
+            company,
+            email,
+            phone,
+            message,
+            website_url,
+            turnstileToken,
+          }),
+        });
+
+        const result = await res.json().catch(() => ({}));
+        if (!res.ok || !result.success) {
+          throw new Error(result.error || 'Không thể gửi yêu cầu lúc này.');
+        }
+
+        showFeedback(
+          'success',
+          `Cảm ơn <strong>${full_name}</strong>! Yêu cầu tư vấn đã được ghi nhận. Đội ngũ MD AGRI sẽ phản hồi trong vòng 24 giờ.`
+        );
+        formEl.reset();
+        const ts = (window as unknown as { turnstile?: { reset: () => void } }).turnstile;
+        if (ts) ts.reset();
+      } catch (err) {
+        const errMsg = err instanceof Error ? err.message : 'Lỗi kết nối.';
+        showFeedback(
+          'error',
+          `${errMsg} Bạn có thể nhắn trực tiếp qua <a href="https://zalo.me/0904622122" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;font-weight:700;">Zalo 0904.622.122</a>.`
+        );
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+        if (btnLabel) btnLabel.textContent = 'Gửi Yêu Cầu Tư Vấn Ngay';
+      }
     });
   });
 </script>
@@ -274,10 +364,20 @@ const {
   }
 
   .mda-inline-form {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 14px;
     margin-bottom: 20px;
+  }
+
+  .hp-field {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
   }
 
   .form-row-2 {
@@ -329,6 +429,11 @@ const {
     border-color: var(--primary-dark);
   }
 
+  .turnstile-wrap {
+    display: flex;
+    justify-content: flex-start;
+  }
+
   .btn-form-cta {
     padding: 14px 24px;
     font-size: 1rem;
@@ -345,9 +450,14 @@ const {
     transition: all var(--transition-base);
   }
 
-  .btn-form-cta:hover {
+  .btn-form-cta:hover:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: 0 6px 22px rgba(255, 144, 70, 0.48);
+  }
+
+  .btn-form-cta:disabled {
+    opacity: 0.7;
+    cursor: wait;
   }
 
   .form-hint {

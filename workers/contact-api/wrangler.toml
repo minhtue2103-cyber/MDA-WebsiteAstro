@@ -1,0 +1,23 @@
+name = "mda-contact-api"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+
+[vars]
+ALLOWED_ORIGINS = "https://mekongdeltaagri.com,https://www.mekongdeltaagri.com,https://mda-websiteastro.pages.dev"
+
+# Tạo D1 database: npx wrangler d1 create mda-contacts-db
+# Sau đó điền database_id nhận được vào bên dưới và chạy:
+# npx wrangler d1 execute mda-contacts-db --remote --file=./schema.sql
+[[d1_databases]]
+binding = "DB"
+database_name = "mda-contacts-db"
+database_id = "6ae22b59-4364-418c-9ec6-22728b327f4d"
+
+# Nạp secrets trước khi deploy (không lưu giá trị thật vào file này):
+# npx wrangler secret put TURNSTILE_SECRET_KEY
+# npx wrangler secret put DISCORD_WEBHOOK_URL
+
+# Tùy chọn: Bật Cloudflare Email Routing nếu muốn nhận thêm qua email
+# [[send_email]]
+# name = "SEND_EMAIL"
+# destination_address = "tue.pham@mekongdeltaagri.com"
