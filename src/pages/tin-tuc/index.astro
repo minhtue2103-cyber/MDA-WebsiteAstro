@@ -24,7 +24,7 @@ const otherNews = sortedNews.filter((item) => item.slug !== featuredNews?.slug);
   heroTitle="Tin Tức Xuất Nhập Khẩu & Hoạt Động MDA Hub"
   lead="Tổng hợp các diễn biến mới nhất về chính sách hải quan, quy tắc xuất xứ FTA và hoạt động kết nối giao thương nông sản Việt Nam."
   breadcrumbs={breadcrumbs}
-  enableCategoryFilter={false}
+  enableCategoryFilter={true}
 >
   <!-- Featured News Block -->
   {featuredNews && (
@@ -72,7 +72,7 @@ const otherNews = sortedNews.filter((item) => item.slug !== featuredNews?.slug);
   </div>
 
   <div class="grid-3 news-grid">
-    {sortedNews.map((news) => (
+    {otherNews.map((news) => (
       <NewsCard
         title={news.data.title}
         description={news.data.description}
@@ -130,7 +130,7 @@ const otherNews = sortedNews.filter((item) => item.slug !== featuredNews?.slug);
     position: absolute;
     top: 16px;
     left: 16px;
-    background: var(--secondary);
+    background: #c2410c;
     color: #ffffff;
     font-size: 0.8rem;
     font-weight: 700;

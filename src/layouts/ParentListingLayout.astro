@@ -174,8 +174,22 @@ const breadcrumbSchema = {
   }
 
   @media (max-width: 768px) {
+    .category-buttons {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      width: 100%;
+      padding-bottom: 6px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .category-filter-btn {
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
     .category-search-wrapper {
       width: 100%;
+      min-width: 0;
     }
   }
 
