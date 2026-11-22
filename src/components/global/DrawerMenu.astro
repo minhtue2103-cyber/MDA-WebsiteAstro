@@ -1,18 +1,13 @@
 ---
 import SocialLinks from '../shared/SocialLinks.astro';
+import BrandLogo from './BrandLogo.astro';
 ---
 
 <div id="mda-drawer-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
 
 <aside id="mda-drawer" class="drawer" aria-label="Menu điều hướng chính" aria-hidden="true">
   <div class="drawer__header">
-    <div class="drawer__logo">
-      <img src="/media/logoMDAgri500x500.webp" alt="Mekong Delta Agri Logo" width="48" height="48" />
-      <div>
-        <span class="drawer__brand-title">MDA HUB</span>
-        <span class="drawer__brand-sub">Mekong Delta Agri</span>
-      </div>
-    </div>
+    <BrandLogo href="" compact={true} />
     <button id="close-drawer-btn" class="drawer__close" aria-label="Đóng menu">
       <i class="bi bi-x-lg"></i>
     </button>
@@ -29,7 +24,12 @@ import SocialLinks from '../shared/SocialLinks.astro';
       <li class="menu-item has-children">
         <div class="menu-link-group">
           <a href="/dich-vu/" class="menu-link"><i class="bi bi-briefcase"></i> Dịch Vụ Đào Tạo &amp; Tư Vấn</a>
-          <button class="toggle-sub" aria-label="Mở rộng mục dịch vụ">
+          <button
+            type="button"
+            class="toggle-sub"
+            aria-label="Thu gọn hoặc mở rộng mục dịch vụ"
+            aria-expanded="true"
+          >
             <i class="bi bi-chevron-down"></i>
           </button>
         </div>
@@ -106,7 +106,7 @@ import SocialLinks from '../shared/SocialLinks.astro';
     top: 0;
     right: 0;
     bottom: 0;
-    width: min(420px, 88vw);
+    width: min(420px, 85vw);
     background-color: #ffffff;
     z-index: 9999;
     transform: translateX(100%);
@@ -115,6 +115,7 @@ import SocialLinks from '../shared/SocialLinks.astro';
     flex-direction: column;
     box-shadow: -8px 0 24px rgba(0, 0, 0, 0.15);
     overflow-y: auto;
+    overscroll-behavior: contain;
   }
 
   .drawer.active {
@@ -125,30 +126,10 @@ import SocialLinks from '../shared/SocialLinks.astro';
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 24px;
+    gap: 12px;
+    padding: 16px 16px 16px 20px;
     border-bottom: 1px solid var(--border-subtle);
     background-color: var(--bg-secondary);
-  }
-
-  .drawer__logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .drawer__brand-title {
-    display: block;
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: 900;
-    color: var(--primary-deep);
-  }
-
-  .drawer__brand-sub {
-    display: block;
-    font-size: 0.78rem;
-    color: var(--text-secondary);
-    text-transform: uppercase;
   }
 
   .drawer__close {
@@ -157,8 +138,11 @@ import SocialLinks from '../shared/SocialLinks.astro';
     font-size: 22px;
     color: var(--text-primary);
     cursor: pointer;
-    width: 36px;
-    height: 36px;
+    min-width: 44px;
+    min-height: 44px;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -217,9 +201,19 @@ import SocialLinks from '../shared/SocialLinks.astro';
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 10px;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 8px;
     color: var(--text-secondary);
     font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-fast);
+  }
+
+  .toggle-sub[aria-expanded='false'] i {
+    transform: rotate(-90deg);
   }
 
   .sub-menu {
@@ -230,6 +224,10 @@ import SocialLinks from '../shared/SocialLinks.astro';
     display: flex;
     flex-direction: column;
     gap: 6px;
+  }
+
+  .sub-menu.collapsed {
+    display: none;
   }
 
   .sub-menu a {
@@ -310,6 +308,7 @@ import SocialLinks from '../shared/SocialLinks.astro';
       backdrop.classList.add('active');
       drawer.setAttribute('aria-hidden', 'false');
       backdrop.setAttribute('aria-hidden', 'false');
+      document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
     }
 
@@ -318,12 +317,24 @@ import SocialLinks from '../shared/SocialLinks.astro';
       backdrop.classList.remove('active');
       drawer.setAttribute('aria-hidden', 'true');
       backdrop.setAttribute('aria-hidden', 'true');
+      document.documentElement.style.overflow = '';
       document.body.style.overflow = '';
     }
 
     if (openBtn) openBtn.addEventListener('click', openDrawer);
     if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
     backdrop.addEventListener('click', closeDrawer);
+
+    drawer.querySelectorAll('.toggle-sub').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const parent = btn.closest('.has-children');
+        const subMenu = parent?.querySelector('.sub-menu');
+        if (!subMenu) return;
+        const isExpanded = btn.getAttribute('aria-expanded') !== 'false';
+        btn.setAttribute('aria-expanded', String(!isExpanded));
+        subMenu.classList.toggle('collapsed', isExpanded);
+      });
+    });
 
     // Escape key
     document.addEventListener('keydown', (e) => {

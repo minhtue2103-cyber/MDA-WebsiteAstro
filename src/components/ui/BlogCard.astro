@@ -37,12 +37,12 @@ const formattedDate = new Date(publishDate).toLocaleDateString('vi-VN', {
         <img src={headlinePhoto} alt={headlinePhotoAlt} loading="lazy" />
       </div>
     </a>
-    <div class="blog-card__badge">
-      <CategoryBadge category={category} size="sm" />
-    </div>
   </div>
 
   <div class="blog-card__body">
+    <div class="blog-card__badge-row">
+      <CategoryBadge category={category} size="sm" />
+    </div>
     <div class="blog-card__meta">
       <span><i class="bi bi-calendar3"></i> {formattedDate}</span>
       <span>•</span>
@@ -95,11 +95,8 @@ const formattedDate = new Date(publishDate).toLocaleDateString('vi-VN', {
     transform: scale(1.05);
   }
 
-  .blog-card__badge {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    z-index: 2;
+  .blog-card__badge-row {
+    margin-bottom: 10px;
   }
 
   .blog-card__body {

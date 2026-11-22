@@ -20,6 +20,9 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Build Astro Project
+        env:
+          PUBLIC_CONTACT_API_URL: ${{ secrets.PUBLIC_CONTACT_API_URL }}
+          PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.PUBLIC_TURNSTILE_SITE_KEY }}
         run: npm run build
       - name: Deploy to Hostinger via lftp
         env:

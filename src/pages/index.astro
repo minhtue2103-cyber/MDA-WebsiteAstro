@@ -439,35 +439,38 @@ const expertFaqs = [
   }
 
   .slider-dots--floating {
-    position: absolute;
-    bottom: clamp(65px, 8vw, 100px);
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin: 0;
-    background: rgba(0, 0, 0, 0.28);
-    backdrop-filter: blur(6px);
-    padding: 6px 14px;
+    justify-content: center;
+    gap: 4px;
+    margin: 10px auto;
+    background: rgba(27, 67, 50, 0.08);
+    padding: 4px 12px;
     border-radius: 20px;
+    width: fit-content;
     z-index: 5;
   }
 
   .dot-btn {
-    width: 10px;
-    height: 10px;
+    width: 32px;
+    height: 32px;
+    padding: 10px;
+    background-clip: content-box;
     border-radius: 50%;
     border: none;
-    background: rgba(255, 255, 255, 0.6);
+    background-color: rgba(45, 94, 45, 0.35);
     cursor: pointer;
     transition: all var(--transition-fast);
   }
 
   .dot-btn.active {
-    background: #ffffff;
-    width: 22px;
-    border-radius: 8px;
+    background-color: var(--primary-deep);
+    width: 40px;
+    border-radius: 16px;
   }
 
   /* =====================================================================
@@ -933,8 +936,19 @@ const expertFaqs = [
     }
 
     .hero-bleed-right {
-      height: 380px;
-      min-height: 380px;
+      height: auto;
+      min-height: 0;
+    }
+
+    .hero-slide__image-wrap--full {
+      min-height: 0;
+      height: auto;
+    }
+
+    .hero-slide__image-wrap--full img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
     }
   }
 

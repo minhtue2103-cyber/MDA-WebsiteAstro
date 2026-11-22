@@ -1,0 +1,94 @@
+---
+interface Props {
+  href?: string;
+  compact?: boolean;
+}
+
+const { href = "/", compact = false } = Astro.props;
+const Tag = href ? "a" : "div";
+---
+
+<Tag
+  href={href || undefined}
+  class={`brand-logo ${compact ? "brand-logo--compact" : ""}`}
+  aria-label={href ? "Mekong Delta Agri Trang Chủ" : undefined}
+>
+  <img
+    src="/media/logoMDAgri500x500.webp"
+    alt="Mekong Delta Agri Logo"
+    width="44"
+    height="44"
+    class="brand-logo__img"
+  />
+  <div class="brand-logo__text">
+    <span class="brand-logo__title">MEKONG DELTA AGRI</span>
+    <span class="brand-logo__sub">MDA Hub</span>
+  </div>
+</Tag>
+
+<style>
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .brand-logo__img {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(45, 94, 45, 0.12);
+  }
+
+  .brand-logo__text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .brand-logo__title {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 900;
+    color: var(--primary-deep);
+    line-height: 1.2;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .brand-logo__sub {
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #c2410c;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @media (max-width: 390px) {
+    .brand-logo {
+      gap: 8px;
+    }
+
+    .brand-logo__img {
+      width: 36px;
+      height: 36px;
+    }
+
+    .brand-logo__title {
+      font-size: 0.92rem;
+    }
+
+    .brand-logo__sub {
+      display: none;
+    }
+  }
+</style>

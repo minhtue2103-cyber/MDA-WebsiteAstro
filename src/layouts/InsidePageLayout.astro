@@ -38,6 +38,7 @@ interface Props {
   showGallery?: boolean;
   showTestimonials?: boolean;
   showContactForm?: boolean;
+  showPillarsBar?: boolean;
   defaultService?: string;
 }
 
@@ -58,6 +59,7 @@ const {
   showGallery = false,
   showTestimonials = false,
   showContactForm = true,
+  showPillarsBar = true,
   defaultService = "",
 } = Astro.props;
 
@@ -111,7 +113,7 @@ const breadcrumbSchema = {
         )}
       </div>
 
-      <!-- Right Column: Photo Full Chiều Cao, Width Tràn Ra Phải Màn Hình (Không Border) -->
+      <!-- Right Column: Clean Hero Photo (no HTML overlay or wave covering image) -->
       <div class="inside-hero-right">
         <div class="inside-hero-photo-wrap">
           <img
@@ -120,20 +122,15 @@ const breadcrumbSchema = {
             class="inside-hero-photo"
             loading="eager"
           />
-          <div class="inside-hero-overlay">
-            <span class="banner-pill">
-              <i class="bi bi-patch-check-fill"></i> Mekong Delta Agri &bull; Hub Tri Thức XNK Nông Sản &amp; AI
-            </span>
-          </div>
         </div>
       </div>
     </div>
-
-    <!-- SVG Wave Divider (Static on Inside Pages) -->
-    <HeroWave animated={false} id="inside" />
+  <!-- MDA 4-Pillar Value Proposition Bar close -->
   </section>
+  )}
 
-  <!-- MDA 4-Pillar Value Proposition Bar (Không Border) -->
+  <!-- MDA 4-Pillar Value Proposition Bar (Only shown when enabled) -->
+  {showPillarsBar && (
   <section class="pillars-bar-section">
     <div class="container">
       <div class="mda-pillar-bar">
@@ -167,7 +164,9 @@ const breadcrumbSchema = {
         </div>
       </div>
     </div>
+  <!-- MDA 4-Pillar Value Proposition Bar close -->
   </section>
+  )}
 
   <!-- Main Content Grid (100% Full Width — BỎ SIDEBAR) -->
   <section class="section section--white inside-content-section">
@@ -221,7 +220,9 @@ const breadcrumbSchema = {
         </div>
       </article>
     </div>
+  <!-- MDA 4-Pillar Value Proposition Bar close -->
   </section>
+  )}
 
   <!-- Bottom Shared Elements (Modular per Hub-Spoke rules) -->
   {showSharedElements && (
@@ -238,7 +239,9 @@ const breadcrumbSchema = {
           <div class="container" style="max-width: 920px;">
             <ContactForm defaultService={defaultService} />
           </div>
-        </section>
+        <!-- MDA 4-Pillar Value Proposition Bar close -->
+  </section>
+  )}
       )}
     </>
   )}
@@ -488,16 +491,28 @@ const breadcrumbSchema = {
   @media (max-width: 992px) {
     .inside-hero-grid {
       grid-template-columns: 1fr;
+      min-height: auto;
     }
 
     .inside-hero-left {
       padding-inline: var(--container-pad-x);
-      padding-block: 40px 24px;
+      padding-block: 32px 20px;
     }
 
     .inside-hero-right {
-      height: 380px;
-      min-height: 380px;
+      height: auto;
+      min-height: 0;
+    }
+
+    .inside-hero-photo-wrap {
+      height: auto;
+      min-height: 0;
+    }
+
+    .inside-hero-photo {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
     }
 
     .mda-pillar-bar {
@@ -506,10 +521,16 @@ const breadcrumbSchema = {
     }
   }
 
+  @media (max-width: 767px) {
+    .inside-hero--bleed {
+      background-image: none;
+    }
+  }
+
   @media (max-width: 576px) {
     .inside-hero-right {
-      height: 260px;
-      min-height: 260px;
+      height: auto;
+      min-height: 0;
     }
 
     .mda-pillar-bar {
