@@ -5,7 +5,7 @@ import BrandLogo from './BrandLogo.astro';
 
 <div id="mda-drawer-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
 
-<aside id="mda-drawer" class="drawer" aria-label="Menu điều hướng chính" aria-hidden="true">
+<aside id="mda-drawer" class="drawer" aria-label="Menu điều hướng chính" aria-hidden="true" inert>
   <div class="drawer__header">
     <BrandLogo href="" compact={true} />
     <button id="close-drawer-btn" class="drawer__close" aria-label="Đóng menu">
@@ -110,7 +110,8 @@ import BrandLogo from './BrandLogo.astro';
     background-color: #ffffff;
     z-index: 9999;
     transform: translateX(100%);
-    transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1);
+    visibility: hidden;
+    transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1), visibility 0.35s;
     display: flex;
     flex-direction: column;
     box-shadow: -8px 0 24px rgba(0, 0, 0, 0.15);
@@ -120,6 +121,7 @@ import BrandLogo from './BrandLogo.astro';
 
   .drawer.active {
     transform: translateX(0);
+    visibility: visible;
   }
 
   .drawer__header {
@@ -306,6 +308,7 @@ import BrandLogo from './BrandLogo.astro';
     function openDrawer() {
       drawer.classList.add('active');
       backdrop.classList.add('active');
+      drawer.removeAttribute('inert');
       drawer.setAttribute('aria-hidden', 'false');
       backdrop.setAttribute('aria-hidden', 'false');
       document.documentElement.style.overflow = 'hidden';
@@ -315,6 +318,7 @@ import BrandLogo from './BrandLogo.astro';
     function closeDrawer() {
       drawer.classList.remove('active');
       backdrop.classList.remove('active');
+      drawer.setAttribute('inert', '');
       drawer.setAttribute('aria-hidden', 'true');
       backdrop.setAttribute('aria-hidden', 'true');
       document.documentElement.style.overflow = '';
