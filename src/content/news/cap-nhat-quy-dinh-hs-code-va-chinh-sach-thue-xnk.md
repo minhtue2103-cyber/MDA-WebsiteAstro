@@ -2,7 +2,7 @@
 title: Cập nhật quy định HS Code và chính sách thuế xuất nhập khẩu mới
 description: Thông tư 85/2026/TT-BTC, 42/2026/TT-BCT và 110/2026/TT-BTC thay đổi cách phân loại HS Code, kiểm soát hàng lưỡng dụng và bãi bỏ 22 thông tư thuế cũ.
 publishDate: 2026-11-13
-headlinePhoto: /media/MDA-AI-Compliance-1.webp
+headlinePhoto: /media/THAY ĐỔI QUY ĐỊNH VỀ HS CODE & CHÍNH SÁCH THUẾ THÁNG 09-2026.webp
 headlinePhotoAlt: "Hình ảnh minh họa cho bài viết: Cập nhật quy định HS Code và chính sách thuế xuất nhập khẩu mới"
 headlinePhotoCaption: Chuyên mục Chứng Từ & Pháp Lý XNK — MDA Agro-Export Hub
 author: Ban Pháp Lý & Tuân Thủ Hải Quan MDA

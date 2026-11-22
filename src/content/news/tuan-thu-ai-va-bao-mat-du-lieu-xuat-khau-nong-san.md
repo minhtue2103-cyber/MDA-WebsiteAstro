@@ -1,11 +1,9 @@
 ---
 title: Tuân thủ AI và bảo mật dữ liệu xuất khẩu nông sản cho SME
-description: Shadow AI khiến doanh nghiệp xuất khẩu nông sản đối mặt án phạt tới 5%
-  doanh thu theo Nghị định 13, mất bản quyền tại EU và lộ giá vốn nếu thiếu Data Masking.
-publishDate: '2026-11-13'
-headlinePhoto: /media/MDA-Hub-AI-Driven.webp
-headlinePhotoAlt: 'Hình ảnh minh họa cho bài viết: Tuân thủ AI và bảo mật dữ liệu
-  xuất khẩu nông sản cho SME'
+description: Shadow AI khiến doanh nghiệp xuất khẩu nông sản đối mặt án phạt tới 5% doanh thu theo Nghị định 13, mất bản quyền tại EU và lộ giá vốn nếu thiếu Data Masking.
+publishDate: 2026-11-13
+headlinePhoto: /media/mda-xnk-ai-6.webp
+headlinePhotoAlt: "Hình ảnh minh họa cho bài viết: Tuân thủ AI và bảo mật dữ liệu xuất khẩu nông sản cho SME"
 headlinePhotoCaption: Chuyên mục Chứng Từ & Pháp Lý XNK — MDA Agro-Export Hub
 author: Ban Pháp Lý & Tuân Thủ Hải Quan MDA
 featured: true
@@ -49,6 +47,7 @@ Nếu không đặt ranh giới rõ ràng, nhân sự sẽ tự suy đoán và t
 
 Doanh nghiệp cũng có thể tham khảo thêm [quy chuẩn bảo mật AI và Data Masking](/blog/chuan-bi-du-lieu-bao-mat-ai-no-code-thay-erp-sme) khi tích hợp tự động hóa chứng từ cho đội ngũ vận hành.
 
+<img src="/media/mda-xnk-ai-11.webp" alt="quy trình năm bước Data Masking và kiểm duyệt ba lớp" loading="lazy" decoding="async" class="mda-inline-img" />
 ## Thực hành quy trình năm bước Data Masking và kiểm duyệt ba lớp
 
 Để vừa tận dụng tốc độ của AI vừa bảo toàn quyền sở hữu trí tuệ theo chuẩn EUIPO, doanh nghiệp cần áp dụng song song quy trình 5 bước Data Masking và mô hình kiểm duyệt ba lớp.

@@ -1,64 +1,49 @@
 ---
 title: Chọn học XNK thực chiến và AI thế nào để làm được chứng từ thật
-description: So sánh học video, lớp nhóm và coaching 1-1 ngành XNK cùng 3 kỹ năng
-  AI thực chiến giúp nhân sự xử lý chứng từ sống và tránh rủi ro lộ dữ liệu.
-publishDate: '2026-11-19'
+description: So sánh học video, lớp nhóm và coaching 1-1 ngành XNK cùng 3 kỹ năng AI thực chiến giúp nhân sự xử lý chứng từ sống và tránh rủi ro lộ dữ liệu.
+publishDate: 2026-11-19
 category: Đào Tạo XNK Thực Chiến
-headlinePhoto: /media/coaching_1_1.webp
-headlinePhotoAlt: Đào tạo nghiệp vụ XNK thực chiến và coaching 1-1 ứng dụng AI trên
-  bộ chứng từ sống
-headlinePhotoCaption: Thực hành đối chiếu bộ chứng từ sống và ứng dụng AI an toàn
-  dữ liệu trong đào tạo XNK 1-1 tại MDA Hub
+headlinePhoto: /media/mda-xnk-ai-contact.webp
+headlinePhotoAlt: Đào tạo nghiệp vụ XNK thực chiến và coaching 1-1 ứng dụng AI trên bộ chứng từ sống
+headlinePhotoCaption: Thực hành đối chiếu bộ chứng từ sống và ứng dụng AI an toàn dữ liệu trong đào tạo XNK 1-1 tại MDA Hub
 author: Ms Jen Phạm (Nhung Phạm)
 readingTime: 6 phút đọc
 tags:
-- kinship/content
-- dao-tao-xnk
-- dao-tao-1-1
-- ung-dung-ai-xnk
-- so-sanh-khoa-hoc
+  - kinship/content
+  - dao-tao-xnk
+  - dao-tao-1-1
+  - ung-dung-ai-xnk
+  - so-sanh-khoa-hoc
 faqSchema:
-- question: Học nghiệp vụ XNK truyền thống khác biệt thế nào so với khóa học thực
-    chiến ứng dụng AI đối với cơ hội nghề nghiệp?
-  answer: Khóa học truyền thống chỉ dạy thao tác nhập liệu thủ công và thuộc lòng
-    lý thuyết Incoterms/B/L vốn đang bị phần mềm tự động hóa dần, trong khi khóa thực
-    chiến ứng dụng AI rèn luyện kỹ năng kiểm soát ngoại lệ, viết prompt đối chiếu
-    chứng từ và phân loại HS Code nhanh hơn nhưng vẫn giữ quyền kiểm duyệt của con
-    người.
-- question: 'So sánh các mô hình đào tạo XNK: học video đại cương, lớp thực hành nhóm
-    và coaching 1-1 trên chứng từ sống khác nhau ra sao?'
-  answer: Khóa video đại cương giá rẻ (khoảng 799.000 - 1.899.000 VNĐ) chỉ giúp nắm
-    khái niệm nền tảng; lớp thực hành nhóm 20-22 buổi phù hợp làm quen quy trình chung;
-    còn mô hình coaching 1-1 hoặc nhóm nhỏ tối đa 5 người (khoảng 15.000.000 VNĐ/4
-    tuần) giúp kèm cặp sát từng bộ chứng từ thật và xử lý tình huống phát sinh.
+  - question: Học nghiệp vụ XNK truyền thống khác biệt thế nào so với khóa học thực chiến ứng dụng AI đối với cơ hội nghề nghiệp?
+    answer: Khóa học truyền thống chỉ dạy thao tác nhập liệu thủ công và thuộc lòng lý thuyết Incoterms/B/L vốn đang bị phần mềm tự động hóa dần, trong khi khóa thực chiến ứng dụng AI rèn luyện kỹ năng kiểm soát ngoại lệ, viết prompt đối chiếu chứng từ và phân loại HS Code nhanh hơn nhưng vẫn giữ quyền kiểm duyệt của con người.
+  - question: "So sánh các mô hình đào tạo XNK: học video đại cương, lớp thực hành nhóm và coaching 1-1 trên chứng từ sống khác nhau ra sao?"
+    answer: Khóa video đại cương giá rẻ (khoảng 799.000 - 1.899.000 VNĐ) chỉ giúp nắm khái niệm nền tảng; lớp thực hành nhóm 20-22 buổi phù hợp làm quen quy trình chung; còn mô hình coaching 1-1 hoặc nhóm nhỏ tối đa 5 người (khoảng 15.000.000 VNĐ/4 tuần) giúp kèm cặp sát từng bộ chứng từ thật và xử lý tình huống phát sinh.
 sources:
-- title: DSV Freight Forwarder Program
-  url: https://www.reddit.com/r/logistics/comments/1vqs5x9/dsv_freight_forwarder_program/
-- title: Freight Forwarding without experience?
-  url: https://www.reddit.com/r/logistics/comments/1pctb12/freight_forwarding_without_experience/
-- title: Is this import export documentation a dead end job or decent stepping stone?
-    (fresher MBA in international business)
-  url: https://www.reddit.com/r/supplychain/comments/1vy5fsb/is_this_import_export_documentation_a_dead_end/
-- title: Đào tạo nghiệp vụ xuất nhập khẩu thực tế số 1 Việt Nam
-  url: https://nghiepvuxuatnhapkhau.com
-- title: Học Xuất Nhập Khẩu Online Ở Đâu Tốt
-  url: https://giadinhxuatnhapkhau.com/hoc-xuat-nhap-khau-online-o-dau-tot
-- title: Khóa Học Xuất Nhập Khẩu Logistics Thực Tế Số 1 Việt Nam | Xuất nhập khẩu
-    Lê Ánh
-  url: https://xuatnhapkhauleanh.edu.vn
-- title: Đào tạo và Huấn luyện Nghiệp vụ ... - CLB YÊU XUẤT NHẬP KHẨU HÀ NỘI
-  url: https://tuhocxuatnhapkhau.com/khoa-huan-luyen/khoa-sales-xuat-khau
-- title: Thực hành nghiệp vụ Xuất Nhập Khẩu, Sale Logistics
-  url: https://hocxuatnhapkhaulogistics.gitiho.com
-- title: Khóa Học Logistics Chuyên Sâu
-  url: https://xuatnhapkhauleanh.edu.vn/khoa-hoc/khoa-hoc-logistics-chuyen-sau.html
-- title: XNK.AI
-  url: https://www.xnk.ai
-- title: FedEx Launches Intelligent AI-powered Customs Solutions in APAC to Streamline
-    Global Trade
-  url: https://newsroom.fedex.com/newsroom/amea/fedex-launches-intelligent-ai-powered-customs-solutions-in-apac-to-streamline-global-trade
-- title: 5 ứng dụng AI trong ngành XNK - Cơ hội mới cho doanh nghiệp XNK
-  url: https://kimhaiseals.vn/5-ung-dung-ai-trong-nganh-xnk
+  - title: DSV Freight Forwarder Program
+    url: https://www.reddit.com/r/logistics/comments/1vqs5x9/dsv_freight_forwarder_program/
+  - title: Freight Forwarding without experience?
+    url: https://www.reddit.com/r/logistics/comments/1pctb12/freight_forwarding_without_experience/
+  - title: Is this import export documentation a dead end job or decent stepping stone? (fresher MBA in international business)
+    url: https://www.reddit.com/r/supplychain/comments/1vy5fsb/is_this_import_export_documentation_a_dead_end/
+  - title: Đào tạo nghiệp vụ xuất nhập khẩu thực tế số 1 Việt Nam
+    url: https://nghiepvuxuatnhapkhau.com
+  - title: Học Xuất Nhập Khẩu Online Ở Đâu Tốt
+    url: https://giadinhxuatnhapkhau.com/hoc-xuat-nhap-khau-online-o-dau-tot
+  - title: Khóa Học Xuất Nhập Khẩu Logistics Thực Tế Số 1 Việt Nam | Xuất nhập khẩu Lê Ánh
+    url: https://xuatnhapkhauleanh.edu.vn
+  - title: Đào tạo và Huấn luyện Nghiệp vụ ... - CLB YÊU XUẤT NHẬP KHẨU HÀ NỘI
+    url: https://tuhocxuatnhapkhau.com/khoa-huan-luyen/khoa-sales-xuat-khau
+  - title: Thực hành nghiệp vụ Xuất Nhập Khẩu, Sale Logistics
+    url: https://hocxuatnhapkhaulogistics.gitiho.com
+  - title: Khóa Học Logistics Chuyên Sâu
+    url: https://xuatnhapkhauleanh.edu.vn/khoa-hoc/khoa-hoc-logistics-chuyen-sau.html
+  - title: XNK.AI
+    url: https://www.xnk.ai
+  - title: FedEx Launches Intelligent AI-powered Customs Solutions in APAC to Streamline Global Trade
+    url: https://newsroom.fedex.com/newsroom/amea/fedex-launches-intelligent-ai-powered-customs-solutions-in-apac-to-streamline-global-trade
+  - title: 5 ứng dụng AI trong ngành XNK - Cơ hội mới cho doanh nghiệp XNK
+    url: https://kimhaiseals.vn/5-ung-dung-ai-trong-nganh-xnk
 ---
 
 > **Bạn có biết**
