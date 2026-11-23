@@ -105,6 +105,14 @@ const orgSchema = {
         set:html={JSON.stringify(Array.isArray(schema) ? schema : [schema])}
       />
     )}
+    <!-- Google Tag Manager via Cloudflare Gateway + Partytown -->
+    <script is:inline type="text/partytown">
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '/metrics/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PQ5R5JT7');
+    </script>
   </head>
   <body>
     <!-- Brand Preloader -->
