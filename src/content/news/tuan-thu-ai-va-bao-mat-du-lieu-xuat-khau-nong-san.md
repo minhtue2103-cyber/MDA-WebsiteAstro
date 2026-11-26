@@ -48,6 +48,7 @@ Nếu không đặt ranh giới rõ ràng, nhân sự sẽ tự suy đoán và t
 Doanh nghiệp cũng có thể tham khảo thêm [quy chuẩn bảo mật AI và Data Masking](/blog/chuan-bi-du-lieu-bao-mat-ai-no-code-thay-erp-sme) khi tích hợp tự động hóa chứng từ cho đội ngũ vận hành.
 
 <img src="/media/mda-xnk-ai-11.webp" alt="quy trình năm bước Data Masking và kiểm duyệt ba lớp" loading="lazy" decoding="async" class="mda-inline-img" />
+
 ## Thực hành quy trình năm bước Data Masking và kiểm duyệt ba lớp
 
 Để vừa tận dụng tốc độ của AI vừa bảo toàn quyền sở hữu trí tuệ theo chuẩn EUIPO, doanh nghiệp cần áp dụng song song quy trình 5 bước Data Masking và mô hình kiểm duyệt ba lớp.

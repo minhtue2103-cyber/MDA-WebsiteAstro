@@ -84,6 +84,7 @@ Dù vậy, người làm nghề cần tỉnh táo nhìn nhận rằng AI không 
 Lợi thế của nhân sự XNK hiện đại nằm ở kỹ năng quản lý ngoại lệ, biết đọc vị các cờ cảnh báo của AI để đối chiếu lại với bảng kê thực tế tại kho bãi trước khi ký nộp ngân hàng.
 
 <img src="/media/mda-xnk-ai-9.webp" alt="chuyên viên chứng từ phải mở bản gốc đối chiếu trực tiếp bằng mắt đối với 100% các trường số liệu trọng yếu bị AI gắn cờ nghi ngờ" loading="lazy" decoding="async" class="mda-inline-img" />
+
 ## Tính toán chi phí phạt bất hợp lệ và hiệu quả hoàn vốn khi đầu tư kiểm tra sớm
 
 Nhiều chủ doanh nghiệp SME thường chần chừ đầu tư quy trình rà soát chứng từ vì nghĩ phí bất hợp lệ chỉ vài chục USD mỗi lỗi. Thực tế vận hành lại đắt đỏ hơn thế rất nhiều khi cộng dồn chi phí tài chính và rủi ro bị người mua nắm thóp để ép giá.
