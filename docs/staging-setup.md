@@ -1,2 +1,2 @@
 Git
-https://github.com/minhtue2103-cyber/mda-websiteastro.git
+https://github.com/minhtue2103-cyber/MDA-WebsiteAstro.git
